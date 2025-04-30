@@ -3,5 +3,5 @@
 @push('')
 
 @section('content')
-    
+    xixixixi
 @endsection
