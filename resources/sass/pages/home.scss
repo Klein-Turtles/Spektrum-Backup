@@ -1,0 +1,1322 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.logo img {
+  max-width: 120px;
+  height: auto;
+}
+
+/* Top bar styles */
+.top-bar {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.top-bar a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Logo styles */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #003156 !important;
+}
+
+/* Center the navbar items */
+.navbar-nav {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Navigation links */
+.navbar-nav .nav-link {
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  padding: 10px 15px;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #003156;
+}
+
+/* Underline effect for nav links */
+.navbar-nav .nav-link::before,
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #003156;
+  transition: width 0.3s;
+  left: 0;
+}
+
+.navbar-nav .nav-link::before {
+  bottom: 0;
+}
+
+.navbar-nav .nav-link::after {
+  display: none;
+}
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  padding: 10px 0;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.3s;
+  margin-top: 0;
+  text-align: left;
+  /* Center dropdown text */
+}
+
+/* Hover dropdown effect */
+.dropdown:hover>.dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+/* Green hover effect for dropdown items */
+.dropdown-item:hover {
+  background-color: #003156;
+  color: white;
+}
+
+/* Underline effect for dropdown items */
+.dropdown-item::after {
+  /* content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #003156;
+  bottom: 5px;
+  left: 50%; */
+  /* transform: translateX(-50%); */
+  transition: width 0.3s;
+}
+
+.dropdown-item:hover::after {
+  width: 100%;
+  background-color: #003156;
+}
+
+.dropdown-toggle::after {
+  font-size: 10px;
+  position: relative;
+  top: -2px;
+}
+
+/* Contact button */
+.contact-btn {
+  background-color: #003156;
+  color: white !important;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: #006ac7;
+}
+
+/* Badge styling */
+.badge-new {
+  background-color: #003156;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.dropdown-item:hover .badge-new {
+  background-color: white;
+  color: #003156;
+}
+
+/* Handle mobile devices - use click for mobile */
+/* DESKTOP - Hover */
+@media (min-width: 992px) {
+  .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE - Click (class .show ditambahkan oleh JS) */
+@media (max-width: 991.98px) {
+  .dropdown-menu {
+    display: none;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+    opacity: 1;
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+    /* Hilangkan panah default kalau mau ganti pakai ikon lain */
+  }
+
+  .dropdown-item {
+    padding: 12px 20px;
+    text-align: left;
+    color: #333;
+  }
+
+  .dropdown-item:hover {
+    background-color: #f8f8f8;
+    color: #003156;
+  }
+}
+
+
+.custom-caption {
+  text-align: left;
+  left: 10%;
+  right: auto;
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 50%;
+  color: white;
+  z-index: 10;
+  /* Biar di atas gambar */
+}
+
+.custom-caption h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.custom-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Features Section */
+.features {
+  padding: 80px 10%;
+  text-align: center;
+  background-color: white;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 50px;
+  color: #333;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #003156;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-box-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-basis: 30%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: box-shadow 0.5s ease;
+}
+
+.feature-box {
+  padding: 30px;
+  background-color: #eaeef1;
+  ;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.116);
+  height: 100%;
+  min-height: 300px;
+  /* <- tambahkan ini agar semua box konsisten tinggi */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: box-shadow 0.5s ease;
+}
+
+.feature-box-link:hover .feature-box {
+  box-shadow: 0 10px 25px rgba(0, 15, 4, 0.2);
+}
+
+/* 2 kolom di layar menengah */
+@media (max-width: 1024px) {
+  .feature-box-link {
+    flex-basis: 47%;
+    /* 2 kolom + gap */
+  }
+}
+
+/* 1 kolom di layar kecil */
+@media (max-width: 600px) {
+  .feature-box-link {
+    flex-basis: 100%;
+  }
+}
+
+
+
+.feature-box:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 40px;
+  color: #003156;
+  margin-bottom: 20px;
+}
+
+.feature-box h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.feature-box p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+.feature-box-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.feature-box {
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+/* Footer */
+footer {
+  background-color: #003156;
+  color: #fff;
+  padding: 50px 10% 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-section {
+  flex-basis: 23%;
+  margin-bottom: 30px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-section h3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #4fbd00;
+}
+
+.footer-contact span {
+  display: block;
+  margin-bottom: 10px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  color: #003156;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Whatsapp Button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s;
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  color: #f0f0f0;
+}
+
+/* carousel  */
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.carousel-container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-item img {
+  pointer-events: none;
+  width: 100%;
+  height: 625px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+  display: none;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-inner {
+  border-radius: 0;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 15px;
+}
+
+.slide-caption h3 {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
+}
+
+.slide-caption p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.carousel-prev,
+.carousel-next {
+  background: #003156;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #003156;
+}
+
+
+/* Selengkapnya button */
+
+.feature-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s;
+}
+
+/* Hover color sama seperti dropdown-item */
+.feature-btn:hover {
+  color: #003156;
+  background-color: transparent;
+}
+
+/* Underline animasi seperti di dropdown-item */
+.feature-btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #003156;
+  bottom: 0;
+  left: -100%;
+  transform: translateX(100%);
+  transition: width 0.3s ease;
+}
+
+.feature-btn:hover::after {
+  width: 100%;
+}
+
+
+/* Section Foto Deskriptif */
+.experience-text {
+  transform: rotate(-90deg);
+  transform-origin: left center;
+  font-weight: bold;
+  background-color: #f7fcf8;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  left: -60px;
+}
+
+/* Section Jasa */
+.card-hover {
+  border-radius: 10px;
+  height: 350px;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover img {
+  border-radius: 10px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card-hover:hover img {
+  transform: scale(1.05);
+  filter: brightness(40%);
+}
+
+/* Overlay fills card */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* Vertikal tengah */
+  justify-content: center;
+  /* Horizontal tengah */
+  background-color: rgba(0, 0, 0, 0);
+  /* Awal transparan */
+  transition: background-color 0.4s ease;
+}
+
+.overlay-bg h5 {
+  color: white !important;
+}
+
+.card-hover:hover .overlay {
+  background-color: #003156e9;
+}
+
+/* Konten teks dengan animasi slide-up */
+.overlay-bg {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  transform: translateY(50%);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.card-hover:hover .overlay-bg {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* Slide-up animation */
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+// css for client
+
+.client-icon{
+  filter: grayscale(1);
+  transform: scale(1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.client-icon:hover{
+    filter: grayscale(0);
+    transform: scale(1.3);
+}
+
+
+/* CSS untuk Google Maps */
+#map {
+  width: 400px;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .maps-container {
+    height: 300px;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+
+  .feature-box {
+    flex-basis: 48%;
+  }
+
+  .footer-section {
+    flex-basis: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-box {
+    flex-basis: 100%;
+  }
+
+  .footer-section {
+    flex-basis: 100%;
+  }
+
+  .header {
+    flex-direction: column;
+    padding: 20px 5%;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 5px 10px;
+  }
+
+  .contact-btn {
+    margin-top: 20px;
+  }
+}
+
+/* Header */
+
+.text-header h5 {
+  color: #003156;
+  font-size: 20px;
+  font-style: bold;
+}
+
+.text-header p {
+  font-size: 20px;
+  color: black;
+}
+
+.text-header h1 {
+  color: #003156;
+}
+
+.desc-header h1 {
+  color: #003156;
+}
+
+.product-title:hover {
+  color: #003156;
+  transition: color 0.3s ease;
+}
+
+
+/* CSS for About Pages */
+
+.vision-mission {
+  margin-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.service-list {
+  text-align: left;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.service-list ul {
+  padding-left: 1rem;
+}
+
+/* ===================================
+SECTION: Floating Card (Koleksi)
+=================================== */
+.card-floating {
+  position: relative;
+  z-index: 10;
+  margin-top: -30px;
+  /* Naik & overlap dengan atas */
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
+  border-radius: 24px;
+  max-width: 1500px;
+  max-height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-floating h5 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: rgba(11, 39, 59);
+  text-align: center;
+}
+
+.card-floating-home {
+  position: relative;
+  z-index: 10;
+  margin-top: -30px;
+  /* Naik & overlap dengan atas */
+  background: linear-gradient(135deg, #006ac7, #003156);
+  backdrop-filter: blur(8px);
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  max-width: 1400px;
+  max-height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-floating-home h5 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.container h5 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #003156;
+  text-align: center;
+}
+
+.icon-service {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 1.2rem;
+  border-radius: 16px;
+  color: rgba(11, 39, 59);
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.icon-service:hover {
+  transform: translateY(-5px);
+}
+
+.icon-service i {
+  font-size: 2rem;
+  color: #003156;
+}
+
+.icon-service p {
+  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.icon-service .btn {
+  margin-top: 10px;
+  background: #003156;
+  border-radius: 20px;
+  padding: 6px 16px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+}
+
+/* ===================================
+SECTION: Statistik
+=================================== */
+
+.stats::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 39, 59, 0.5);
+  z-index: 0;
+}
+
+.stats .row {
+  position: relative;
+}
+
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #003156;
+}
+
+.stats p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.office-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.office-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 30px;
+  height: 100%;
+}
+
+.office-card h2 {
+  color: #0A5172;
+  font-size: 28px;
+  font-weight: 700;
+  padding: 25px 25px 5px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.office-map {
+  width: 100%;
+  height: 300px;
+}
+
+.contact-info {
+  padding: 25px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #003156;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.contact-text {
+  line-height: 1.5;
+}
+
+.contact-text strong {
+  display: block;
+  color: #0A5172;
+  margin-bottom: 5px;
+}
+
+.text-bg {
+  background-color: #0a51727d;
+  padding: 8px 8px;
+  border-radius: 10px;
+}
+
+.btn-selengkapnya {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  border: none;
+}
+
+.btn-selengkapnya i {
+  opacity: 0;
+  transform: translateX(0);
+  margin-left: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-selengkapnya:hover i {
+  color: #006ac7;
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.btn-selengkapnya-bottom {
+  display: inline-block;
+  background-color: transparent;
+  color: #003156;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  border: none;
+}
+
+.btn-selengkapnya-bottom i {
+  opacity: 0;
+  transform: translateX(0);
+  margin-left: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-selengkapnya-bottom:hover i {
+  color: #006ac7;
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+#faq {
+  background-color: #f9f9f9;
+}
+
+#faq h2 {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+#faq p {
+  color: #6c757d;
+}
+
+.accordion-button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-image: linear-gradient(135deg, #006ac7, #003156);
+  color: #ffffff;
+}
+
+.accordion-body {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.accordion-item {
+  margin-bottom: 8px;
+  border: 1px solid rgba(0,0,0,.125);
+  overflow: hidden;
+}
+
+.cek-layanan-section {
+  background-color: #ffffff;
+}
+
+.cek-layanan-section .form-control {
+  border: 1px solid #000a56;
+  font-size: 18px;
+  color: #6c757d;
+}
+
+.cek-layanan-section .form-control::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+.cek-layanan-section .btn-primary {
+  background-color: #003156;
+  border-color: #3f3dce;
+  font-weight: 600;
+}
+
+.cek-layanan-section .btn-primary:hover {
+  background-color: #006ac7;
+  border-color: #006ac7;
+}
+
+.promo-card {
+  position: relative;
+  border-radius: 1rem;
+  background-color: transparent;
+  padding: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+  --text-color-hover: white;
+  max-width: 250px;
+}
+
+.promo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #000a56e1, white);
+  transition: background 0.3s ease;
+  z-index: -1;
+}
+
+.promo-card-content {
+  background-color: white;
+  border-radius: calc(1rem - 4px);
+  padding: 1rem; 
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+/* Perbaikan kunci: Ubah background pada ::before dan buat konten transparan */
+.promo-card:hover::before {
+  background: linear-gradient(135deg, #006ac7, #003156);
+}
+
+.promo-card:hover .promo-card-content {
+  background-color: transparent;
+}
+
+.promo-card:hover .promo-card-content *:not(.btn-promo) {
+  color: var(--text-color-hover) !important; 
+}
+
+.promo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Mengatur jarak antar elemen */
+  justify-content: center;
+}
+
+.col-md-5.col-lg-3 {
+  flex: 0 0 auto;
+  width: calc(33.333% - 20px); /* Menyesuaikan lebar dengan pertimbangan gap */
+  max-width: 230px;
+}
+
+.container h2 {
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #003156;
+  text-align: center;
+}
+
+.text-primary {
+  color: #000a56 !important;
+}
+
+/* Untuk tombol outline agar terlihat saat hover */
+.promo-card:hover .btn-outline-light {
+  border-color: white;
+  color: white;
+}
+
+
+.text-primary {
+  color: #000a56 !important; /* Warna biru Bootstrap */
+}
+
+/* Mengubah warna text-muted menjadi merah */
+.text-muted {
+  color: #ff0000 !important;
+}
+
+.promo-card:hover h4.fw-bold.text-primary {
+  color: rgb(255, 221, 0) !important;
+}
+
+.promo-card:hover .promo-card-content .btn-promo:hover {
+  background-color: #ffffff;
+  color: #006ac7 !important; 
+  border-color: #ffffff;
+}
+
+.btn-promo {
+  color: #003156;
+  border: 1.5px solid #003156;
+  transition: all 0.3s ease;
+}
+
+.btn-promo:hover {
+  background-color: #ffffff;
+  color: #006ac7; 
+  border-color: #ffffff;
+}
+
+
+/* Style untuk badge custom ribbon */
+.ribbon-container {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.sale-ribbon {
+  background-image: linear-gradient(180deg, #ffffff, #158de9);
+  color: #000a56;
+  padding: 8px 12px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  min-width: 150px;
+  text-align: center;
+}
+
+.sale-ribbon span {
+  display: block;   
+}
+
+.card-offering {
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.277);
+}
+
+.card-offering h2 {
+  color: #003156;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.card-offering p {
+  color: #555;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.btn-offering {
+  background-color: #4B48DB;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 25px;
+  font-weight: 500;
+  border: none;
+}
+
+.btn-offering:hover {
+  background-color: #3532A7;
+  color: white;
+}
+
+.offering-logo {
+  opacity: 0.2;
+  max-width: 60px;
+}
+
+/* Tambahkan ini di CSS Anda */
+.offering-bg-right {
+  background-color: #000a56;
+  height: 100%;
+  width: 30%;
+  position: absolute;
+  right: 0; /* Ubah left menjadi right */
+  z-index: 0;
+}

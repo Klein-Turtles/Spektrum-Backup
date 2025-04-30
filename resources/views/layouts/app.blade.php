@@ -4,10 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- favicon -->
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title',config('app.name', 'Laravel'))</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -22,11 +25,19 @@
     <div id="app">
         @include('layouts.navigation')
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
 
+    
+    <footer>
+        @include('layouts.footer')
+    </footer>
     @stack('scripts')
+    <a href="https://wa.me/085730220374" class="whatsapp-btn" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    
 </body>
 </html>

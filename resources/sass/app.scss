@@ -7,6 +7,20 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+// Animate css
+@import 'animate.css';
+
+// Bootstrap Icons
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+//Aos js
+@import 'aos/dist/aos.css';
+
+@import "component/navbar";
+
+@import "component/footer";
+
+
 
 .fade-out {
     animation: fadeOut 2s linear;
