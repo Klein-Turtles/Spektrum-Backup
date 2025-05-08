@@ -1,10 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm ">
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
     <div class="container px-3">
       <!-- Logo -->
       <a href="index.html" class="logo d-flex align-items-center me-auto ">
-        <img src="assets/img/logo.png" class="img-fluid" alt="">
+        <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="Logo">
       </a>
-      <!-- <a class="navbar-brand" href="index.html">Spektrum Teknologi</a> -->
 
       <!-- Mobile Toggle Button -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
@@ -16,7 +15,7 @@
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav gap-3">
           <li class="nav-item">
-            <a class="nav-link " href="{{ route('home') }}" >Home</a>
+            <a class="nav-link " href="{{ route('home') }}" style="color: #003156;" >Home</a>
           </li>
 
           <!-- Services Dropdown -->

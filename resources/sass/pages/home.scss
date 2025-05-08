@@ -1,6 +1,8 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', 'Raleway', 'Poppins', sans-serif;
 }
 
 body {
@@ -27,7 +29,7 @@ body {
 /* Logo styles */
 .navbar-brand {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
   color: #003156 !important;
 }
 
@@ -40,7 +42,7 @@ body {
 /* Navigation links */
 .navbar-nav .nav-link {
   color: #333;
-  font-weight: 500;
+  font-weight: 700;
   position: relative;
   padding: 10px 15px;
   transition: color 0.3s;
@@ -112,14 +114,6 @@ body {
 
 /* Underline effect for dropdown items */
 .dropdown-item::after {
-  /* content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: #003156;
-  bottom: 5px;
-  left: 50%; */
-  /* transform: translateX(-50%); */
   transition: width 0.3s;
 }
 
@@ -141,7 +135,7 @@ body {
   padding: 12px 25px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   transition: background-color 0.3s;
 }
 
@@ -151,7 +145,7 @@ body {
 
 /* Badge styling */
 .badge-new {
-  background-color: #003156;
+  background-color: #0a0d10;
   color: white;
   padding: 2px 5px;
   border-radius: 3px;
@@ -232,7 +226,8 @@ body {
 
 .custom-caption h2 {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
@@ -357,9 +352,17 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+.client-icon{
+  filter: grayscale(1);
+  transform: scale(1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
+}
 
-
+.client-icon:hover{
+    filter: grayscale(0);
+    transform: scale(1.3);
+}
 
 /* Footer */
 footer {
@@ -479,12 +482,13 @@ footer {
   overflow: hidden;
   border-radius: 0;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
 }
 
 .carousel-item img {
   pointer-events: none;
   width: 100%;
-  height: 625px;
+  height: 650px;
   object-fit: cover;
   border-radius: 0;
 }
@@ -621,7 +625,7 @@ footer {
 .experience-text {
   transform: rotate(-90deg);
   transform-origin: left center;
-  font-weight: bold;
+  font-weight: 700;
   background-color: #f7fcf8;
   color: #333;
   padding: 6px 12px;
@@ -711,20 +715,6 @@ footer {
   object-fit: cover;
 }
 
-// css for client
-
-.client-icon{
-  filter: grayscale(1);
-  transform: scale(1);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-}
-
-.client-icon:hover{
-    filter: grayscale(0);
-    transform: scale(1.3);
-}
-
 
 /* CSS untuk Google Maps */
 #map {
@@ -789,25 +779,25 @@ footer {
 .text-header h5 {
   color: #003156;
   font-size: 20px;
-  font-style: bold;
+  font-weight: 700;
 }
 
 .text-header p {
   font-size: 20px;
+  font-weight: 400;
   color: black;
 }
 
 .text-header h1 {
   color: #003156;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 .desc-header h1 {
   color: #003156;
-}
-
-.product-title:hover {
-  color: #003156;
-  transition: color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 
@@ -921,7 +911,7 @@ SECTION: Floating Card (Koleksi)
   border-radius: 20px;
   padding: 6px 16px;
   color: rgb(255, 255, 255);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9rem;
   border: none;
 }
@@ -970,6 +960,7 @@ SECTION: Statistik
 .office-card h2 {
   color: #0A5172;
   font-size: 28px;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   padding: 25px 25px 5px;
   border-bottom: 1px solid #f0f0f0;
@@ -1025,7 +1016,7 @@ SECTION: Statistik
   background-color: transparent;
   color: white;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   padding: 10px 16px;
   transition: all 0.3s ease;
   position: relative;
@@ -1050,7 +1041,7 @@ SECTION: Statistik
   background-color: transparent;
   color: #003156;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   padding: 10px 16px;
   transition: all 0.3s ease;
   position: relative;
@@ -1076,7 +1067,7 @@ SECTION: Statistik
 
 #faq h2 {
   color: #2c3e50;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 #faq p {
@@ -1086,7 +1077,7 @@ SECTION: Statistik
 .accordion-button {
   padding-top: 10px;
   padding-bottom: 10px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1rem;
   border: none;
 }
@@ -1110,94 +1101,6 @@ SECTION: Statistik
   overflow: hidden;
 }
 
-.cek-layanan-section {
-  background-color: #ffffff;
-}
-
-.cek-layanan-section .form-control {
-  border: 1px solid #000a56;
-  font-size: 18px;
-  color: #6c757d;
-}
-
-.cek-layanan-section .form-control::placeholder {
-  color: #6c757d;
-  opacity: 1;
-}
-
-.cek-layanan-section .btn-primary {
-  background-color: #003156;
-  border-color: #3f3dce;
-  font-weight: 600;
-}
-
-.cek-layanan-section .btn-primary:hover {
-  background-color: #006ac7;
-  border-color: #006ac7;
-}
-
-.promo-card {
-  position: relative;
-  border-radius: 1rem;
-  background-color: transparent;
-  padding: 4px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1;
-  --text-color-hover: white;
-  max-width: 250px;
-}
-
-.promo-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 1rem;
-  background: linear-gradient(180deg, #000a56e1, white);
-  transition: background 0.3s ease;
-  z-index: -1;
-}
-
-.promo-card-content {
-  background-color: white;
-  border-radius: calc(1rem - 4px);
-  padding: 1rem; 
-  height: 100%;
-  transition: background-color 0.3s ease;
-}
-
-.promo-card:hover {
-  transform: translateY(-10px) scale(1.03);
-}
-
-/* Perbaikan kunci: Ubah background pada ::before dan buat konten transparan */
-.promo-card:hover::before {
-  background: linear-gradient(135deg, #006ac7, #003156);
-}
-
-.promo-card:hover .promo-card-content {
-  background-color: transparent;
-}
-
-.promo-card:hover .promo-card-content *:not(.btn-promo) {
-  color: var(--text-color-hover) !important; 
-}
-
-.promo-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px; /* Mengatur jarak antar elemen */
-  justify-content: center;
-}
-
-.col-md-5.col-lg-3 {
-  flex: 0 0 auto;
-  width: calc(33.333% - 20px); /* Menyesuaikan lebar dengan pertimbangan gap */
-  max-width: 230px;
-}
-
 .container h2 {
   font-weight: 800;
   margin-bottom: 3rem;
@@ -1209,70 +1112,6 @@ SECTION: Statistik
   color: #000a56 !important;
 }
 
-/* Untuk tombol outline agar terlihat saat hover */
-.promo-card:hover .btn-outline-light {
-  border-color: white;
-  color: white;
-}
-
-
-.text-primary {
-  color: #000a56 !important; /* Warna biru Bootstrap */
-}
-
-/* Mengubah warna text-muted menjadi merah */
-.text-muted {
-  color: #ff0000 !important;
-}
-
-.promo-card:hover h4.fw-bold.text-primary {
-  color: rgb(255, 221, 0) !important;
-}
-
-.promo-card:hover .promo-card-content .btn-promo:hover {
-  background-color: #ffffff;
-  color: #006ac7 !important; 
-  border-color: #ffffff;
-}
-
-.btn-promo {
-  color: #003156;
-  border: 1.5px solid #003156;
-  transition: all 0.3s ease;
-}
-
-.btn-promo:hover {
-  background-color: #ffffff;
-  color: #006ac7; 
-  border-color: #ffffff;
-}
-
-
-/* Style untuk badge custom ribbon */
-.ribbon-container {
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.sale-ribbon {
-  background-image: linear-gradient(180deg, #ffffff, #158de9);
-  color: #000a56;
-  padding: 8px 12px;
-  font-weight: bold;
-  position: relative;
-  display: inline-block;
-  border-radius: 10px;
-  min-width: 150px;
-  text-align: center;
-}
-
-.sale-ribbon span {
-  display: block;   
-}
-
 .card-offering {
   border-radius: 20px;
   overflow: hidden;
@@ -1282,7 +1121,7 @@ SECTION: Statistik
 
 .card-offering h2 {
   color: #003156;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 2rem;
 }
 
@@ -1290,6 +1129,7 @@ SECTION: Statistik
   color: #555;
   font-size: 1rem;
   text-align: justify;
+  font-weight: 400;
 }
 
 .btn-offering {
@@ -1311,12 +1151,109 @@ SECTION: Statistik
   max-width: 60px;
 }
 
-/* Tambahkan ini di CSS Anda */
 .offering-bg-right {
   background-color: #000a56;
   height: 100%;
   width: 30%;
   position: absolute;
-  right: 0; /* Ubah left menjadi right */
+  right: 0; 
   z-index: 0;
+}
+
+.promo-section {
+  background: #f9fbff;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.promo-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 8px;
+}
+
+.promo-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+
+.poster-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  overflow: hidden; /* penting agar sudut gambar ikut rounded */
+  max-width: 520px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.poster-card:hover p {
+  font-weight: 650;
+  color: white;
+}
+
+.poster-card:hover h4 {
+  color: rgb(255, 238, 0); 
+  font-weight: 650;
+}
+
+.poster-card:hover {
+  background-image: linear-gradient(90deg, #006ac7, #ffffff);
+  border-color: linear-gradient(180deg, #006ac7, #003156);
+  box-shadow: 0 8px 24px rgba(0, 123, 255, 0.2);
+  transform: translateY(-6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-row {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+
+.promo-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px 14px 0 0; /* hanya pojok atas */
+}
+
+.poster-info {
+  padding: 16px; /* padding hanya untuk konten bawah */
+}
+
+.poster-info h4 {
+  font-size: 18px;
+  color: #007bff;
+  margin: 8px 0 4px;
+}
+
+.poster-info p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.promo-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.promo-button:hover {
+  background-color: #0056b3;
 }

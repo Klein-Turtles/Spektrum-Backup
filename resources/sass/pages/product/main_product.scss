@@ -1,0 +1,266 @@
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+  }
+  
+  .carousel-container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+  }
+  
+  .carousel-item img {
+    pointer-events: none;
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 0;
+  }
+  
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    position: relative;
+    display: none;
+  }
+  
+  .carousel-slide.active {
+    display: block;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .carousel-inner {
+    border-radius: 0;
+  }
+
+  .custom-caption {
+    text-align: left;
+    left: 10%;
+    right: auto;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 50%;
+    color: white;
+    z-index: 10;
+    /* Biar di atas gambar */
+  }
+  
+  .custom-caption h2 {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .custom-caption p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }  
+
+.category-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.category-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+.category-subtitle {
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    padding-top: 0;
+}
+
+.nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    color: #212529;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+
+.category-card {
+    border-radius: 8px;
+    width: 200px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 300px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.category-img-container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+}
+
+.category-img {
+    max-height: 200px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.category-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.category-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.product-count {
+    color: #6c757d;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.price-highlight {
+    font-weight: bold;
+    color: rgb(110, 255, 48);
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.trending-products h2 {
+    font-weight: 600;
+    color: #212529;
+}
+
+.product-card {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+    height: 200px;
+    object-fit: contain;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.product-name {
+    font-weight: 700;
+    margin-bottom: 10px;
+    min-height: 32px;
+}
+
+.price-container {
+    margin-bottom: 10px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+
+.current-price {
+    font-weight: 600;
+    color: #212529;
+    font-size: 1.1rem;
+}
+
+.rating {
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.buy-now-btn {
+    width: 100%;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.buy-now-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    font-weight: 800;
+    margin-bottom: 3rem;
+    color: #003156;
+    text-align: center;
+}
+
+@media (max-width: 991.98px) {
+    .category-title {
+        font-size: 2rem;
+    }
+}
