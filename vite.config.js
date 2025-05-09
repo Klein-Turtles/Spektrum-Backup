@@ -8,7 +8,9 @@ export default defineConfig({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.js',
-                fg.sync('resources/sass/pages/**/*.scss'),
+                'resources/sass/admin.scss',
+                'resources/js/admin.js',
+                ...fg.sync('resources/sass/pages/**/*.scss'),
             ],
             refresh: true,
         }),
