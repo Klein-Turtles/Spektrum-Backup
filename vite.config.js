@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/sass/admin.scss',
                 'resources/js/admin.js',
                 ...fg.sync('resources/sass/pages/**/*.scss'),
+                ...fg.sync('resources/js/pages/**/*.js'),
             ],
             refresh: true,
         }),
