@@ -28,6 +28,8 @@ Route::get('/products-{page}', [ServicePageController::class, 'product'])->name(
 Route::get('/portofolio', [ServicePageController::class, 'portofolio'])->name('portofolio');
 Route::get('/portofolio/detail-porto/{slug}', [ServicePageController::class, 'detailPorto'])->name('detail-porto');
 
+Route::get('/product', [ServicePageController::class, 'product'])->name('product');
+Route::get('/product/detail-product/{slug}', [ServicePageController::class, 'detailProduct'])->name('detail-product');
 
 Route::get('/admin', function () {
     return view('layouts.admin');})->name('admin');
