@@ -5,8 +5,7 @@
     <h2>Tambah Portofolio</h2>
 
     <form action="{{ route('porto_store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        
+        @csrf        
         <div class="form-group mb-3">
             <label for="nama" class="form-label">Nama Portofolio</label>
             <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}" required>

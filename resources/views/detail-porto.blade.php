@@ -46,19 +46,5 @@
       </div>      
     </div>
   </div>
-  
-  <div> 
-    <h3>Key Features:</h3>
-    <ul>
-      <li><strong>Biometric Authentication:</strong> Secure login using fingerprint or facial recognition</li>
-      <li><strong>Instant Transfers:</strong> Send money to anyone, anywhere, instantly</li>
-      <li><strong>Bill Management:</strong> Pay and schedule recurring bills with reminders</li>
-      <li><strong>Financial Analytics:</strong> AI-powered insights into spending patterns and financial health</li>
-      <li><strong>Investment Portal:</strong> Easy-to-use investment tools with real-time market data</li>
-      <li><strong>Virtual Cards:</strong> Create and manage virtual cards for online shopping</li>
-      <li><strong>Customer Support:</strong> 24/7 in-app support with live chat and AI assistants</li>
-    </ul>
-  </div>
-</div>
 
 @endsection
