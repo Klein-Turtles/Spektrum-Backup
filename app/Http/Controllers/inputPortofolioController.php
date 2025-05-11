@@ -19,9 +19,11 @@ class inputPortofolioController extends Controller
     {
         $request->validate([
             'nama'=>'required|string|max:255',
-            'deskripsi'=>'required|string|max:255',
+            'deskripsi_singkat'=>'required|string|max:255',
+            'deskripsi'=>'required|string|max:1000',
             'client'=>'required|string',
             'tahun'=>'required|integer',
+            'spesifikasi'=>'required|string|max:1000',
             'gambar'=>'required|image|mimes:jpg,jpeg,png,gif'
         
         ]);
@@ -30,9 +32,11 @@ class inputPortofolioController extends Controller
 
         Portofolio::create([
             'nama'=>$request->nama,
+            'deskripsi_singkat'=>$request->deskripsi_singkat,
             'deskripsi'=>$request->deskripsi,
             'client'=>$request->client,
             'tahun'=>$request->tahun,
+            'spesifikasi'=>$request->spesifikasi,
             'gambar'=>$gambarPath
         ]);
 

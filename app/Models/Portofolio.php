@@ -12,7 +12,7 @@ class Portofolio extends Model
     use HasFactory,HasSlug;
 
     protected $table = 'portofolio';
-    protected $fillable = ['nama','deskripsi','client','tahun','gambar'];
+    protected $fillable = ['nama','deskripsi_singkat', 'deskripsi','client','tahun','spesifikasi','gambar'];
 
     public function getSlugOptions(): SlugOptions
     {
