@@ -24,6 +24,8 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::get('/services-{page}', [ServicePageController::class, 'service'])->name('services.show');
+Route::get('/services/selengkapnya', [ServicePageController::class, 'layananPopuler'])->name('layananPopuler');
+
 Route::get('/products-{page}', [ServicePageController::class, 'product'])->name('products.show');
 
 Route::get('/portofolio', [ServicePageController::class, 'portofolio'])->name('portofolio');

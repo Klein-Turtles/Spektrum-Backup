@@ -167,22 +167,22 @@
     <!-- Trending Products Section HTML -->
     <section class="trending-products py-5 pt-3">
         <div class="container">
-            <h2 class="category-title text-start mb-0 text-center mb-5">Layanan Populer Kami</h2>
+            <h2 class="category-title text-center mb-5">Layanan Populer Kami</h2>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                 <!-- Product 1 -->
                 <div class="col">
+            @foreach ($layananPerKategori as $layanan)
                     <div class="product-card h-100">
                         <div class="position-relative">
                             <span class="badge bg-primary discount-badge">13% Off</span>
-                            <img src="{{ url('/images/categories-services/services/mg90s-servo.png')}}" class="card-img-top product-img"
+                            <img src="{{ asset('storage/' . $layanan->gambar)}}" class="card-img-top product-img"
                                 alt="mg90s-servo">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h3 class="product-name category-name">MG 90S Servo Metal</h3>
+                            <h3 class="product-name category-name">{{ $layanan->nama }}</h3>
                             <div class="price-container">
-                                <span class="original-price">Rp51.500</span>
-                                <span class="current-price">Rp33.000</span>
+                                <span class="original-price">{{ $layanan->harga }}</span>
                             </div>
                             <div class="rating">
                                 <i class="bi bi-star-fill"></i>
@@ -194,115 +194,10 @@
                             <button class="btn btn-primary buy-now-btn mt-auto">Pre Order</button>
                         </div>
                     </div>
+            @endforeach
                 </div>
 
-                <!-- Product 2 -->
-                <div class="col">
-                    <div class="product-card h-100">
-                        <div class="position-relative">
-                            <!-- <span class="badge bg-primary discount-badge">17% Off</span> -->
-                            <img src="{{ url('/images/categories-services/services/adapter-ic-TQFP32-1.png')}}" class="card-img-top product-img"
-                                alt="adapter-ic-TQFP32">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="product-name category-name">Adapter IC Programmer Chip Test Socket Burning TQFP32
-                            </h3>
-                            <div class="price-container">
-                                <!-- <span class="original-price">Rp662.000</span> -->
-                                <span class="current-price">Rp290.000</span>
-                            </div>
-                            <div class="rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <button class="btn btn-primary buy-now-btn mt-auto">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="col">
-                    <div class="product-card h-100">
-                        <div class="position-relative">
-                            <!-- <span class="badge bg-primary discount-badge">7% Off</span> -->
-                            <img src="{{ url('/images/categories-services/services/bme230-humidity.png')}}" class="card-img-top product-img"
-                                alt="bme230-humidity">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="product-name category-name">BME280 Humidity Sensor</h3>
-                            <div class="price-container">
-                                <!-- <span class="original-price">Rp1.200.000</span> -->
-                                <span class="current-price">Rp210.000</span>
-                            </div>
-                            <div class="rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                            </div>
-                            <button class="btn btn-primary buy-now-btn mt-auto">Pre Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="col">
-                    <div class="product-card h-100">
-                        <div class="position-relative">
-                            <span class="badge bg-primary discount-badge">26% Off</span>
-                            <img src="{{ url('/images/categories-services/services/gas-sensor-tgs2600.png')}}" class="card-img-top product-img"
-                                alt="gas-sensor-tgs2600">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="product-name category-name">GAS SENSOR TGS2600</h3>
-                            <div class="price-container">
-                                <span class="original-price">Rp400.000</span>
-                                <span class="current-price">Rp350.000</span>
-                            </div>
-                            <div class="rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <button class="btn btn-primary buy-now-btn mt-auto">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="col">
-                    <div class="product-card h-100">
-                        <div class="position-relative">
-                            <span class="badge bg-primary discount-badge">26% Off</span>
-                            <img src="{{ url('/images/categories-services/services/l298n-dual-motor-driver-module.png')}}"
-                                class="card-img-top product-img" alt="gas-sensor-tgs2600">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="product-name category-name">L298N Dual Motor Driver Module</h3>
-                            <div class="price-container">
-                                <span class="original-price">Rp44.000</span>
-                                <span class="current-price">Rp35.599</span>
-                            </div>
-                            <div class="rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <button class="btn btn-primary buy-now-btn mt-auto">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+</section>
 
     
 @endsection
