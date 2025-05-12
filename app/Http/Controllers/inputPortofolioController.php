@@ -40,7 +40,7 @@ class inputPortofolioController extends Controller
             'gambar'=>$gambarPath
         ]);
 
-        return redirect()->route('admin_porto')->with('success', 'Portofolio berhasil ditambahkan!');
+        return redirect()->route('input_porto')->with('success', 'Portofolio berhasil ditambahkan!');
 
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminPortoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServicePageController;
@@ -55,6 +56,10 @@ Route::middleware('auth')->group(function () {
 
     // Route untuk menyimpan portofolio
     Route::post('/dashboard/input-porto', [inputPortofolioController::class, 'store'])->name('porto_store');
+
+    Route::get('/dashboard/portofolio', [adminPortoController::class, 'portoShow'])->name('admin_porto');
+    Route::get('/dashboard/portofolio/{id}/edit', [adminPortoController::class, 'edit'])->name('edit_porto');
+    Route::put('/dashboard/portofolio/{id}', [adminPortoController::class, 'update'])->name('update_porto');
 });
 
 Route::get('/dashboard/product', function () {

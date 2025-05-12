@@ -4,7 +4,7 @@
             <div class="d-flex align-items-center justify-content-between w-100">
                 <div class="d-flex align-items-center">
                     <a href="{{ route('home') }}" class="text-decoration-none text-white d-flex align-items-center">
-                    <div class="bg-primary text-white rounded d-flex justify-content-center align-items-center me-2" style="width: 30px; height: 30px;">B</div>
+                    <div class="bg-primary text-white rounded d-flex justify-content-center align-items-center me-2" style="width: 30px; height: 30px;">S</div>
                     <span class="sidebar-logo-text h5 mb-0">Spektrum</span>
                 </div>
                     </a>

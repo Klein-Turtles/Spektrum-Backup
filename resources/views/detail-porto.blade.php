@@ -25,7 +25,7 @@
   
   <div> <!-- Right column - Project Details -->
     <div class="project-details">
-      <h1 class="project-title">{{ $portofolio->nama }}</h1>
+      <h1 class="project-title" >{{ $portofolio->nama }}</h1>
       <div class="project-description">
         <p>{{ $portofolio->deskripsi_singkat ?? 'No description available.' }}</p> 
       </div>
