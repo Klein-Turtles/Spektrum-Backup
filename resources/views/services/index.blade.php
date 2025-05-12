@@ -2,6 +2,7 @@
 
 @push('styles')
 @vite('resources/sass/pages/services/main-services.scss')
+@endpush
 
 @section('content')
     <!-- Carousel Container -->
@@ -58,7 +59,7 @@
                                 </div>
                                 <div class="category-info">
                                     <h3 class="category-name">Internet of Things</h3>
-                                    <p class="product-count">6 Produk</p>
+                                    <p class="product-count">{{ $categories->where('name', 'Internet of Things')->first()->services_count ?? 0 }} Produk</p>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +73,7 @@
                                 </div>
                                 <div class="category-info">
                                     <h3 class="category-name">Industrial Automatic Control</h3>
-                                    <p class="product-count">8 Produk</p>
+                                    <p class="product-count">{{ $categories->where('name', 'Industrial Automatic Control')->first()->services_count ?? 0 }} Produk</p>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +86,7 @@
                                 </div>
                                 <div class="category-info">
                                     <h3 class="category-name">Robotics</h3>
-                                    <p class="product-count">4 Produk</p>
+                                    <p class="product-count">{{ $categories->where('name', 'Robotics')->first()->services_count ?? 0 }} Produk</p>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +100,7 @@
                                 </div>
                                 <div class="category-info">
                                     <h3 class="category-name">3D Printing</h3>
-                                    <p class="product-count">5 Produk</p>
+                                    <p class="product-count">{{ $categories->where('name', '3D Printing')->first()->services_count ?? 0 }} Produk</p>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +114,7 @@
                                 </div>
                                 <div class="category-info">
                                     <h3 class="category-name">Renewable Energy</h3>
-                                    <p class="product-count">5 Produk</p>
+                                    <p class="product-count">{{ $categories->where('name', 'Renewable Energy')->first()->services_count ?? 0 }} Produk</p>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +128,7 @@
                                 </div>
                                 <div class="category-info">
                                     <h3 class="category-name">Lasser Cutting</h3>
-                                    <p class="product-count">5 Produk</p>
+                                    <p class="product-count">{{ $categories->where('name', 'Lasser Cutting')->first()->services_count ?? 0 }} Produk</p>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +142,7 @@
                                 </div>
                                 <div class="category-info">
                                     <h3 class="category-name">Tech Farm</h3>
-                                    <p class="product-count">5 Produk</p>
+                                    <p class="product-count">{{ $categories->where('name', 'Tech Farm')->first()->services_count ?? 0 }} Produk</p>
                                 </div>
                             </div>
                         </div>
@@ -155,12 +156,14 @@
                                 </div>
                                 <div class="category-info">
                                     <h3 class="category-name">IoT Training</h3>
-                                    <p class="product-count">5 Produk</p>
+                                    <p class="product-count">{{ $categories->where('name', 'IoT Training')->first()->services_count ?? 0 }} Produk</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </section>
 
     <!-- Trending Products Section HTML -->
@@ -169,19 +172,25 @@
             <h2 class="category-title text-start mb-0 text-center mb-5">Layanan Populer Kami</h2>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <!-- Product 1 -->
+                @foreach($services as $service)
                 <div class="col">
                     <div class="product-card h-100">
                         <div class="position-relative">
-                            <span class="badge bg-primary discount-badge">13% Off</span>
-                            <img src="{{ url('/images/categories-services/services/mg90s-servo.png')}}" class="card-img-top product-img"
-                                alt="mg90s-servo">
+                            @if($service->discount > 0)
+                            <span class="badge bg-primary discount-badge">{{ $service->discount }}% Off</span>
+                            @endif
+                            <img src="{{ asset('storage/' . $service->gambar) }}" class="card-img-top product-img"
+                                alt="{{ $service->nama }}">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h3 class="product-name category-name">MG 90S Servo Metal</h3>
+                            <h3 class="product-name category-name">{{ $service->nama }}</h3>
                             <div class="price-container">
-                                <span class="original-price">Rp51.500</span>
-                                <span class="current-price">Rp33.000</span>
+                                @if($service->discount > 0)
+                                <span class="original-price">Rp{{ number_format($service->harga, 0, ',', '.') }}</span>
+                                <span class="current-price">Rp{{ number_format($service->harga - ($service->harga * $service->discount / 100), 0, ',', '.') }}</span>
+                                @else
+                                <span class="current-price">Rp{{ number_format($service->harga, 0, ',', '.') }}</span>
+                                @endif
                             </div>
                             <div class="rating">
                                 <i class="bi bi-star-fill"></i>
@@ -190,118 +199,19 @@
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-half"></i>
                             </div>
-                            <button class="btn btn-primary buy-now-btn mt-auto">Pre Order</button>
+                            <a href="{{ route('services.detail', $service->id) }}" class="btn btn-primary buy-now-btn mt-auto">
+                                {{ $service->status == 'pre-order' ? 'Pre Order' : 'Lihat Detail' }}
+                            </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Product 2 -->
-                <div class="col">
-                    <div class="product-card h-100">
-                        <div class="position-relative">
-                            <!-- <span class="badge bg-primary discount-badge">17% Off</span> -->
-                            <img src="{{ url('/images/categories-services/services/adapter-ic-TQFP32-1.png')}}" class="card-img-top product-img"
-                                alt="adapter-ic-TQFP32">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="product-name category-name">Adapter IC Programmer Chip Test Socket Burning TQFP32
-                            </h3>
-                            <div class="price-container">
-                                <!-- <span class="original-price">Rp662.000</span> -->
-                                <span class="current-price">Rp290.000</span>
-                            </div>
-                            <div class="rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <button class="btn btn-primary buy-now-btn mt-auto">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="col">
-                    <div class="product-card h-100">
-                        <div class="position-relative">
-                            <!-- <span class="badge bg-primary discount-badge">7% Off</span> -->
-                            <img src="{{ url('/images/categories-services/services/bme230-humidity.png')}}" class="card-img-top product-img"
-                                alt="bme230-humidity">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="product-name category-name">BME280 Humidity Sensor</h3>
-                            <div class="price-container">
-                                <!-- <span class="original-price">Rp1.200.000</span> -->
-                                <span class="current-price">Rp210.000</span>
-                            </div>
-                            <div class="rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                            </div>
-                            <button class="btn btn-primary buy-now-btn mt-auto">Pre Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="col">
-                    <div class="product-card h-100">
-                        <div class="position-relative">
-                            <span class="badge bg-primary discount-badge">26% Off</span>
-                            <img src="{{ url('/images/categories-services/services/gas-sensor-tgs2600.png')}}" class="card-img-top product-img"
-                                alt="gas-sensor-tgs2600">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="product-name category-name">GAS SENSOR TGS2600</h3>
-                            <div class="price-container">
-                                <span class="original-price">Rp400.000</span>
-                                <span class="current-price">Rp350.000</span>
-                            </div>
-                            <div class="rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <button class="btn btn-primary buy-now-btn mt-auto">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="col">
-                    <div class="product-card h-100">
-                        <div class="position-relative">
-                            <span class="badge bg-primary discount-badge">26% Off</span>
-                            <img src="{{ url('/images/categories-services/services/l298n-dual-motor-driver-module.png')}}"
-                                class="card-img-top product-img" alt="gas-sensor-tgs2600">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="product-name category-name">L298N Dual Motor Driver Module</h3>
-                            <div class="price-container">
-                                <span class="original-price">Rp44.000</span>
-                                <span class="current-price">Rp35.599</span>
-                            </div>
-                            <div class="rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <button class="btn btn-primary buy-now-btn mt-auto">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
 
-    
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center mt-4">
+        {!! $services->links() !!}
+    </div>
 @endsection

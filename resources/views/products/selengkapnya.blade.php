@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@push('styles')
+@push('content')
 @vite('resources/sass/pages/product/main_product.scss')
 
 @section('content')
