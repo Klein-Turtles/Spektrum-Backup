@@ -165,7 +165,7 @@
     <!-- Trending Products Section HTML -->
     <section class="trending-products py-5 pt-3">
         <div class="container">
-            <h2 class="category-title text-start mb-0 text-center mb-5">Layanan Populer Kami</h2>
+            <h2 class="category-title text-center mb-5">Layanan Populer Kami</h2>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                 <!-- Product 1 -->
