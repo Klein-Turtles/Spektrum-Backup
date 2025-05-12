@@ -72,6 +72,9 @@ Route::get('/dashboard/service', function () {
     return view('dashboard.adminservice.service');
 })->middleware(['auth', 'verified'])->name('admin_service');
 
+Route::get('/dashboard/input-service', function () {
+    return view('dashboard.adminservice.create');
+})->middleware(['auth', 'verified'])->name('admin_input_service');
 
 
 Route::middleware('auth')->group(function () {
