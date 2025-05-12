@@ -108,11 +108,13 @@
       <!-- Card 1 -->
       <div class="col-md-6 col-lg-4">
         <div class="card-hover position-relative overflow-hidden rounded-4">
-          <img src="{{ url('/images/categories-services/satelite-training-system.png') }}" class="w-100 h-100 object-fit-cover card-img">          
+          <img src="{{ url('/images/categories-services/satelite-training-system.png') }}" class="w-100 h-100 object-fit-cover card-img">
+          <div class="position-absolute top-50 start-50 translate-middle text-white text-center z-2">
             <span
               class="position-absolute top-50 start-50 translate-middle text-white px-3 py-2 rounded-3 fw-bold fs-5 text-nowrap text-bg">
               Satellite Training System
             </span>
+          </div>
           <div class="overlay d-flex align-items-center justify-content-center">
             <div class="overlay-bg text-white text-center px-4 py-3 rounded-4">
               <h5 class="fw-bold">Satellite Training System</h5>

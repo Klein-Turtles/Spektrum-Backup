@@ -58,6 +58,6 @@
   </div>
   
   <div class="copyright">
-    2019 - Now © Copyright by Spektrum Teknologi.
+    2022 - Now © Copyright by Spektrum Teknologi.
   </div>
 </footer>

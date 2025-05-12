@@ -1,15 +1,14 @@
-/* Footer */
- footer {
-   background-color: #003156;
-   color: #fff;
-   padding: 30px 10% 10px;
- }
+footer {
+  background-color: #001963; /* Dark blue color like MCC */
+  color: #fff;
+  padding: 50px 10% 20px;
+}
 
- .footer-content {
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   margin-bottom: 30px;
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .footer-section {
@@ -17,62 +16,76 @@
   margin-bottom: 30px;
 }
 
+.footer-section.logo {
+  flex-basis: 25%;
+  padding-right: 40px;
+  justify-content: flex-start;
+}
+
+.footer-section.logo img {
+  max-width: 180px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
 .footer-section h3 {
   font-size: 18px;
   margin-bottom: 20px;
   color: #fff;
-  position: relative;
+  font-weight: normal;
   padding-bottom: 10px;
 }
 
+/* Remove the underline that was in the original */
 .footer-section h3:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background-color: #ffffff;
-}
-
-.footer-section p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #ccc;
+  display: none;
 }
 
 .footer-links a {
   display: block;
-  color: #ccc;
+  color: #fff;
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   transition: color 0.3s;
 }
 
-.footer-links a:hover {
-  color: #4fbd00;
-}
-
-.footer-contact span {
-  display: block;
-  margin-bottom: 10px;
-  color: #ccc;
-  font-size: 14px;
-}
-
-.footer-contact i {
+.footer-links a i {
   margin-right: 10px;
-  color: #003156;
+  width: 20px;
+  text-align: center;
+}
+
+.footer-links a:hover {
+  color: #ccc;
+}
+
+.footer-contact .contact-item {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.footer-contact .contact-item i {
+  font-size: 20px;
+  margin-right: 15px;
+  margin-top: 3px;
+  color: #fff;
+  width: 20px;
+  text-align: center;
+}
+
+.footer-contact .contact-item div {
+  line-height: 1.5;
 }
 
 .copyright {
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid #ffffff;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 14px;
-  color: #ccc;
+  color: #fff;
 }
-
 /* Whatsapp Button */
 .whatsapp-btn {
   position: fixed;

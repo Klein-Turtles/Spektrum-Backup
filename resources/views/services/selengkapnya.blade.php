@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-@vite('resources/sass/pages/services/main-services.scss')
+@vite('resources/sass/pages/product/main_product.scss')
 
 @section('content')
     <!-- Carousel Container -->
@@ -23,6 +23,7 @@
             </div>
         </div>
     </div>
+
 
     <section class="category-section bg-white mb-0">
         <div class="container">
@@ -53,7 +54,7 @@
                         <div class="col-6 col-md-3 mb-4 category-item">
                             <div class="card category-card">
                                 <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/services/wifi.png')}}" alt="Internet of Things"
+                                    <img src="{{ url('/images/categories-services/wifi.png')}}" alt="Internet of Things"
                                         class="category-img">
                                 </div>
                                 <div class="category-info">
@@ -67,7 +68,7 @@
                         <div class="col-6 col-md-3 mb-4 category-item">
                             <div class="card category-card">
                                 <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/services/plc.png')}}" alt="Industrial Automatic Control"
+                                    <img src="{{ url('/images/categories-services/plc.png')}}" alt="Industrial Automatic Control"
                                         class="category-img">
                                 </div>
                                 <div class="category-info">
@@ -81,7 +82,7 @@
                         <div class="col-6 col-md-3 mb-4 category-item">
                             <div class="card category-card">
                                 <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/services/drone.png')}}" alt="Robotics" class="category-img">
+                                    <img src="{{ url('/images/categories-services/drone.png')}}" alt="Robotics" class="category-img">
                                 </div>
                                 <div class="category-info">
                                     <h3 class="category-name">Robotics</h3>
@@ -94,7 +95,7 @@
                         <div class="col-6 col-md-3 mb-4 category-item">
                             <div class="card category-card">
                                 <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/services/education.png')}}" alt="3D Printing"
+                                    <img src="{{ url('/images/categories-services/education.png')}}" alt="3D Printing"
                                         class="category-img">
                                 </div>
                                 <div class="category-info">
@@ -108,7 +109,7 @@
                         <div class="col-6 col-md-3 mb-4 category-item">
                             <div class="card category-card">
                                 <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/services/education.png')}}" alt="Renewable Energy"
+                                    <img src="{{ url('/images/categories-services/education.png')}}" alt="Renewable Energy"
                                         class="category-img">
                                 </div>
                                 <div class="category-info">
@@ -122,7 +123,7 @@
                         <div class="col-6 col-md-3 mb-4 category-item">
                             <div class="card category-card">
                                 <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/services/education.png')}}" alt="Lasser Cutting"
+                                    <img src="{{ url('/images/categories-services/education.png')}}" alt="Lasser Cutting"
                                         class="category-img">
                                 </div>
                                 <div class="category-info">
@@ -136,7 +137,7 @@
                         <div class="col-6 col-md-3 mb-4 category-item">
                             <div class="card category-card">
                                 <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/services/education.png')}}" alt="Tech Farm"
+                                    <img src="{{ url('/images/categories-services/education.png')}}" alt="Tech Farm"
                                         class="category-img">
                                 </div>
                                 <div class="category-info">
@@ -150,7 +151,7 @@
                         <div class="col-6 col-md-3 mb-4 category-item">
                             <div class="card category-card">
                                 <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/services/education.png')}}" alt="IoT Training"
+                                    <img src="{{ url('/images/categories-services/education.png')}}" alt="IoT Training"
                                         class="category-img">
                                 </div>
                                 <div class="category-info">

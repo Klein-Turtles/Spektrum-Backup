@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
     <div class="container px-3">
       <!-- Logo -->
-<a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto">
-    <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="Logo">
-</a>
+      <a href="index.html" class="logo d-flex align-items-center me-auto ">
+        <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="Logo">
+      </a>
 
       <!-- Mobile Toggle Button -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
