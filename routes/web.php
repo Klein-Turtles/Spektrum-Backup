@@ -68,6 +68,10 @@ Route::get('/dashboard/product', function () {
     return view('dashboard.product');
 })->middleware(['auth', 'verified'])->name('admin_product');
 
+Route::get('/dashboard/service', function () {
+    return view('dashboard.adminservice.service');
+})->middleware(['auth', 'verified'])->name('admin_service');
+
 
 
 Route::middleware('auth')->group(function () {

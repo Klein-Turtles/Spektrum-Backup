@@ -38,6 +38,15 @@
                     <span class="sidebar-item-text">Portofolio</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('admin_service') }}"
+                    class="nav-link"
+                    :class="{ 'active': activePage === 'admin_service' }"
+                    @click="activePage = 'admin_porto'; if (window.innerWidth < 768) isSidebarOpen = false">
+                    <i class="bi bi-box"></i>
+                    <span class="sidebar-item-text">Service</span>
+                </a>
+            </li>
         </ul>
         
         <div class="mt-auto sidebar-footer">
