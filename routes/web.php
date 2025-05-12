@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServicePageController;
 use App\Http\Controllers\inputPortofolioController;
+use App\Http\Controllers\ServiceController;
 
 
 Route::get('/', function () {
@@ -73,5 +74,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
+Route::get('/services/detail{id}', [ServiceController::class, 'show'])->name('services.detail');
+
 
 require __DIR__.'/auth.php';
