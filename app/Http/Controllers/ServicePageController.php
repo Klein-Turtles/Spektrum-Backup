@@ -8,25 +8,23 @@ use Illuminate\Http\Request;
 
 class ServicePageController extends Controller
 {
-    public function service($page)
+        public function service()
     {
-        $availablePages = [
-            'iot',
-            'iac',
-            'robotic',
-            '3dprint',
-            'energy',
-            'lasercutting',
-            'iottrain',
-            'techfarm',
-            'selengkapnya'
-        ];
 
-        if (!in_array($page, $availablePages)) {
-            abort(404);
+        // Ambil semua kategori unik
+        $kategorilist = Service::select('kategori')->distinct()->pluck('kategori');
+
+        // Ambil satu layanan untuk tiap kategori
+        $layananPerKategori = collect();
+
+        foreach ($kategorilist as $kategori) {
+            $layanan = Service::where('kategori', $kategori)->inRandomOrder()->first();
+            if ($layanan) {
+                $layananPerKategori->push($layanan);
+            }
         }
 
-        return view('services.' . $page);
+        return view('services', compact('layananPerKategori'));
     }
 
     public function product($page)
@@ -59,72 +57,83 @@ class ServicePageController extends Controller
         return view('detail-porto', compact('portofolio'));
     }
 
-    public function layananPopuler()
+
+    // Services
+    public function index()
     {
-
-        // Ambil semua kategori unik
-        $kategorilist = Service::select('kategori')->distinct()->pluck('kategori');
-
-        // Ambil satu layanan untuk tiap kategori
-        $layananPerKategori = collect();
-
-        foreach ($kategorilist as $kategori) {
-            $layanan = Service::where('kategori', $kategori)->inRandomOrder()->first();
-            if ($layanan) {
-                $layananPerKategori->push($layanan);
-            }
-        }
-        return view('services.selengkapnya', compact('layananPerKategori'));
+        $layanan = Service::all();
+        return view('dashboard.adminservice.index', compact('layanan'));
     }
 
-// Services
-public function index()
-{
-    $services = Service::all();
-    return view('dashboard.services.index', compact('services'));
-}
+    public function detailService($slug)
+    {
+        $layanan = Service::where('slug', $slug)->firstOrFail();
+        return view('services.detail-service', compact('layanan'));
+    }
 
-public function create()
-{
-    $categories = ['IoT', 'Automation', 'Robotics', 'TechFarm']; // contoh
-    return view('dashboard.services.create', compact('categories'));
-}
+    public function create()
+    {
+        $kategori = ['IoT', 'Automation', 'Robotics', 'TechFarm']; // atau ambil dari model Category
+        return view('dashboard.adminservice.create', compact('kategori'));
+    }
 
-public function store(Request $request)
-{
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'category' => 'required|string',
-        'description' => 'required',
-    ]);
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'kategori' => 'required|string',
+            'deskripsi'=>'required|string|max:1000',
+            'gambar'=>'required|image|mimes:jpg,jpeg,png,gif'
+        ]);
 
-    Service::create($request->all());
-    return redirect()->route('admin.services.index')->with('success', 'Layanan berhasil ditambahkan.');
-}
+        $gambarPath = $request->file('gambar')->store('service', 'public');
 
-public function edit(Service $service)
-{
-    $categories = ['IoT', 'Automation', 'Robotics', 'TechFarm'];
-    return view('dashboard.services.edit', compact('service', 'categories'));
-}
+        Service::create([
+            'nama'=>$request->nama,
+            'deskripsi'=>$request->deskripsi,
+            'gambar'=>$gambarPath,
+            'kategori'=>$request->kategori,
+            'harga'=>$request->harga
+        ]);
+        return redirect()->route('service_input')->with('success', 'Layanan berhasil ditambahkan.');
+    }
 
-public function update(Request $request, Service $service)
-{
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'category' => 'required|string',
-        'description' => 'required',
-    ]);
+    public function edit($id)
+    {
+        $layanan = Service::findOrFail($id);
+        $kategori = ['IoT', 'Automation', 'Robotics', 'TechFarm'];
+        return view('dashboard.adminservice.edit', compact('layanan', 'kategori'));
+    }
 
-    $service->update($request->all());
-    return redirect()->route('admin.services.index')->with('success', 'Layanan berhasil diupdate.');
-}
+    public function update(Request $request, Service $layanan )
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'kategori' => 'required|string',
+            'deskripsi'=>'required|string|max:1000',
+            'gambar'=>'required|image|mimes:jpg,jpeg,png,gif'
+        ]);
 
-public function destroy(Service $service)
-{
-    $service->delete();
-    return back()->with('success', 'Layanan berhasil dihapus.');
-}
+        if ($request->hasFile('gambar')) {
+                $gambarPath = $request->file('gambar')->store('service', 'public');
+                $layanan->gambar = $gambarPath;
+            }
+
+        $layanan->update([
+            'nama'=>$request->nama,
+            'deskripsi'=>$request->deskripsi,
+            'gambar'=>$gambarPath,
+            'kategori'=>$request->kategori,
+            'harga'=>$request->harga
+        ]);
+        return redirect()->route('admin.services.index')->with('success', 'Layanan berhasil diupdate.');
+    }
+
+    public function destroy(Service $layanan)
+    {
+        $layanan->delete();
+        return back()->with('success', 'Layanan berhasil dihapus.');
+    }
 
 
 }
