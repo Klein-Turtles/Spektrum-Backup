@@ -93,16 +93,18 @@
 
                         <!-- 3D Printing -->
                         <div class="col-6 col-md-3 mb-4 category-item">
-                            <div class="card category-card">
-                                <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/education.png')}}" alt="3D Printing"
-                                        class="category-img">
+                            <a href="" class="text-decoration-none text-dark">
+                                <div class="card category-card h-100">
+                                    <div class="category-img-container">
+                                        <img src="{{ url('/images/categories-services/education.png') }}" alt="3D Printing"
+                                            class="category-img">
+                                    </div>
+                                    <div class="category-info">
+                                        <h3 class="category-name">3D Printing</h3>
+                                        <p class="product-count">5 Produk</p>
+                                    </div>
                                 </div>
-                                <div class="category-info">
-                                    <h3 class="category-name">3D Printing</h3>
-                                    <p class="product-count">5 Produk</p>
-                                </div>
-                            </div>
+                            </a>
                         </div>
 
                         <!-- Renewable Energy -->
@@ -164,25 +166,26 @@
                 </div>
     </section>
 
-    <!-- Trending Products Section HTML -->
-    <section class="trending-products py-5 pt-3">
-        <div class="container">
-            <h2 class="category-title text-center mb-5">Layanan Populer Kami</h2>
+<!-- Trending Products Section HTML -->
+<section class="trending-products py-5 pt-3">
+    <div class="container">
+        <h2 class="category-title text-center mb-5">Layanan Populer Kami</h2>
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <!-- Product 1 -->
-                <div class="col">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <!-- Product Cards - Each card in its own column -->
             @foreach ($layananPerKategori as $layanan)
+            <div class="col">
+                {{-- <a href="{{ route('detail-service', $service->slug) }}" class="service-card-link"> --}}
                     <div class="product-card h-100">
                         <div class="position-relative">
                             <span class="badge bg-primary discount-badge">13% Off</span>
                             <img src="{{ asset('storage/' . $layanan->gambar)}}" class="card-img-top product-img"
-                                alt="mg90s-servo">
+                                alt="{{ $layanan->nama }}">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h3 class="product-name category-name">{{ $layanan->nama }}</h3>
                             <div class="price-container">
-                                <span class="original-price">{{ $layanan->harga }}</span>
+                                <span class="fs-5 font-weigh-bold">{{ $layanan->harga }}</span>
                             </div>
                             <div class="rating">
                                 <i class="bi bi-star-fill"></i>
@@ -191,12 +194,14 @@
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-half"></i>
                             </div>
-                            <button class="btn btn-primary buy-now-btn mt-auto">Pre Order</button>
+                            <a href="{{ route('detail-service', $layanan->slug) }}" class="btn btn-primary buy-now-btn mt-auto">Lihat Detail</a>
                         </div>
                     </div>
+                {{-- </a> --}}
+            </div>
             @endforeach
-                </div>
-
+        </div>
+    </div>
 </section>
 
     

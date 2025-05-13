@@ -1,48 +1,46 @@
-@extends('layouts.dashboard')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container mx-auto max-w-xl">
-    <h1 class="text-2xl font-bold mb-4">Edit Layanan</h1>
+<div class="container mt-5">
+    <h1 class="h3 mb-4">Tambah Layanan Baru</h1>
 
-    <form action="{{ route('services.update', $service->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+    <form action="{{ route('update_service', $layanan->id) }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
 
-        <div class="mb-4">
-            <label for="judul" class="block font-medium">Judul</label>
-            <input type="text" name="judul" class="w-full p-2 border rounded" value="{{ $service->judul }}" required>
+            <div class="mb-3">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" name="nama" id="nama" class="form-control"  value="{{ old('nama',$layanan->nama) }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="deskripsi" class="form-label">Deskripsi</label>
+                <textarea name="deskripsi" id="deskripsi" class="form-control" rows="4" required> {{ old('deskripsi', $layanan->deskripsi) }} </textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="harga" class="form-label">harga</label>
+                <input type="number" name="harga" id="harga" class="form-control"  value="{{ old('harga',$layanan->harga) }}" required>
         </div>
 
-        <div class="mb-4">
-            <label for="deskripsi" class="block font-medium">Deskripsi</label>
-            <textarea name="deskripsi" class="w-full p-2 border rounded" rows="4" required>{{ $service->deskripsi }}</textarea>
+        <div class="mb-3">
+            <label for="gambar" class="form-label">Gambar</label>
+            <input type="file" name="gambar" id="gambar" class="form-control">
         </div>
 
-        <div class="mb-4">
-            <label for="gambar" class="block font-medium">Gambar</label>
-            <input type="file" name="gambar" class="w-full">
-            @if ($service->gambar)
-                <img src="{{ asset('storage/' . $service->gambar) }}" class="w-32 mt-2 rounded">
-            @endif
-        </div>
-
-        <div class="mb-4">
-            <label for="category_id" class="block font-medium">Kategori</label>
-            <select name="category_id" class="w-full p-2 border rounded" required>
-                @foreach ($categories as $cat)
-                    <option value="{{ $cat->id }}" {{ $service->category_id == $cat->id ? 'selected' : '' }}>
-                        {{ $cat->nama }}
+        <div class="mb-3">
+            <label for="kategori" class="form-label">Kategori</label>
+            <select name="kategori" id="kategori" class="form-select"  value="{{ old('kategori',$layanan->kategori) }}" required>
+                @foreach ($kategori as $cat)
+                    <option value="{{ $cat }}" {{ old('kategori', $layanan->kategori) == $cat ? 'selected' : ''}}>
+                        {{ $cat }}
                     </option>
                 @endforeach
             </select>
         </div>
 
-        <div class="mb-4">
-            <label for="discount" class="block font-medium">Diskon (%)</label>
-            <input type="number" name="discount" class="w-full p-2 border rounded" value="{{ $service->discount }}">
-        </div>
 
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
 </div>
 @endsection
