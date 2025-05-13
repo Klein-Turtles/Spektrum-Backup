@@ -76,7 +76,6 @@ Route::get('/dashboard/input-service', function () {
     return view('dashboard.adminservice.create');
 })->middleware(['auth', 'verified'])->name('admin_input_service');
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

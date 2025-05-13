@@ -15,7 +15,7 @@
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav gap-3">
           <li class="nav-item">
-            <a class="nav-link " href="{{ route('home') }}" style="color: #003156;" >Home</a>
+            <a class="nav-link " href="{{ route('home') }}" >Home</a>
           </li>
 
           <!-- Services Dropdown -->
