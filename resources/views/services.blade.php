@@ -2,8 +2,123 @@
 
 @push('styles')
 @vite('resources/sass/pages/product/main_product.scss')
+<style>
+/* Additional styles for the new elements */
+.search-dropdown-row {
+    background-color: #f8f9fa;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box .form-control {
+    padding-left: 40px;
+    border-radius: 25px;
+    border: 2px solid #e0e0e0;
+    padding-right: 60px;
+    height: 50px;
+    font-size: 1rem;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.search-box .btn-search {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    padding: 6px 12px;
+}
+
+.category-dropdown .dropdown-toggle {
+    border-radius: 25px;
+    padding: 12px 20px;
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+/* Custom carousel caption positioning */
+.custom-caption {
+    text-align: left;
+    left: 5%;
+    right: auto;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 45%;
+}
+
+@media (max-width: 768px) {
+    .custom-caption {
+        left: 3%;
+        max-width: 90%;
+        top: 60%;
+    }
+    
+    .custom-caption h2 {
+        font-size: 1.8rem;
+    }
+    
+    .custom-caption p {
+        font-size: 1rem;
+    }
+}
+</style>
+@endpush
 
 @section('content')
+    <!-- Search Bar and Category Dropdown Section -->
+    <div class="search-dropdown-row">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 mb-3 mb-md-0">
+                    <div class="search-box">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" class="form-control" id="searchInput" placeholder="Cari layanan terbaik disini!">
+                        <button class="btn btn-primary btn-search" type="button" id="searchBtn">
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-3 mb-md-0">
+                    <div class="category-dropdown">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle w-100" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-funnel"></i> Pilih Kategori
+                            </button>
+                            <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown">
+                                <li><a class="dropdown-item" href="#" data-category="sistem">Internet Of Things</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="nutrisi">Industrial Automatic Controls</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="peralatan">3D Printing</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="konsultasi">Robotics</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="konsultasi">Renewable Energy</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="konsultasi">Lasser Cutting</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="konsultasi">Tech Farm</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="konsultasi">Workshop IoT</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="all">Semua Kategori</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Carousel Container -->
     <div class="carousel-container overflow-hidden position-relative">
         <div id="carouselExampleSlidesOnly" class="carousel slide d-none d-md-block" data-bs-ride="carousel"
@@ -24,158 +139,15 @@
         </div>
     </div>
 
-
-    <section class="category-section bg-white mb-0">
+    <!-- Trending Products Section HTML -->
+    <section class="trending-products py-5 pt-3">
         <div class="container">
-            <div class="row">
-                <!-- Kolom kiri untuk teks heading -->
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <a href="#"
-                        class="text-decoration-none text-uppercase fw-bold text-primary mb-3 d-block">KATEGORI</a>
-                    <h2 class="category-title text-start mb-0">Cari Kategori Layanan</h2>
-                    <p class="category-subtitle text-start">Menyediakan berbagai layanan teknologi terkini untuk
-                        kebutuhan industri dan pendidikan.</p>
+            <h2 class="category-title text-center mb-5">Layanan Populer Kami</h2>
 
-                    <!-- Tombol navigasi -->
-                    <div class="d-flex mt-4">
-                        <button id="prevBtn" class="nav-btn me-2">
-                            <i class="fas fa-arrow-left"></i>
-                        </button>
-                        <button id="nextBtn" class="nav-btn">
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Kolom kanan untuk kartu kategori -->
-                <div class="col-lg-8">
-                    <div class="row category-container">
-                        <!-- IoT  -->
-                        <div class="col-6 col-md-3 mb-4 category-item">
-                            <div class="card category-card">
-                                <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/wifi.png')}}" alt="Internet of Things"
-                                        class="category-img">
-                                </div>
-                                <div class="category-info">
-                                    <h3 class="category-name">Internet of Things</h3>
-                                    <p class="product-count">6 Produk</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Perangkat Industri -->
-                        <div class="col-6 col-md-3 mb-4 category-item">
-                            <div class="card category-card">
-                                <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/plc.png')}}" alt="Industrial Automatic Control"
-                                        class="category-img">
-                                </div>
-                                <div class="category-info">
-                                    <h3 class="category-name">Industrial Automatic Control</h3>
-                                    <p class="product-count">8 Produk</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Robotics -->
-                        <div class="col-6 col-md-3 mb-4 category-item">
-                            <div class="card category-card">
-                                <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/drone.png')}}" alt="Robotics" class="category-img">
-                                </div>
-                                <div class="category-info">
-                                    <h3 class="category-name">Robotics</h3>
-                                    <p class="product-count">4 Produk</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 3D Printing -->
-                        <div class="col-6 col-md-3 mb-4 category-item">
-                            <a href="" class="text-decoration-none text-dark">
-                                <div class="card category-card h-100">
-                                    <div class="category-img-container">
-                                        <img src="{{ url('/images/categories-services/education.png') }}" alt="3D Printing"
-                                            class="category-img">
-                                    </div>
-                                    <div class="category-info">
-                                        <h3 class="category-name">3D Printing</h3>
-                                        <p class="product-count">5 Produk</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <!-- Renewable Energy -->
-                        <div class="col-6 col-md-3 mb-4 category-item">
-                            <div class="card category-card">
-                                <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/education.png')}}" alt="Renewable Energy"
-                                        class="category-img">
-                                </div>
-                                <div class="category-info">
-                                    <h3 class="category-name">Renewable Energy</h3>
-                                    <p class="product-count">5 Produk</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Lasser Cutting -->
-                        <div class="col-6 col-md-3 mb-4 category-item">
-                            <div class="card category-card">
-                                <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/education.png')}}" alt="Lasser Cutting"
-                                        class="category-img">
-                                </div>
-                                <div class="category-info">
-                                    <h3 class="category-name">Lasser Cutting</h3>
-                                    <p class="product-count">5 Produk</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Tech Farm -->
-                        <div class="col-6 col-md-3 mb-4 category-item">
-                            <div class="card category-card">
-                                <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/education.png')}}" alt="Tech Farm"
-                                        class="category-img">
-                                </div>
-                                <div class="category-info">
-                                    <h3 class="category-name">Tech Farm</h3>
-                                    <p class="product-count">5 Produk</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- IoT Training -->
-                        <div class="col-6 col-md-3 mb-4 category-item">
-                            <div class="card category-card">
-                                <div class="category-img-container">
-                                    <img src="{{ url('/images/categories-services/education.png')}}" alt="IoT Training"
-                                        class="category-img">
-                                </div>
-                                <div class="category-info">
-                                    <h3 class="category-name">IoT Training</h3>
-                                    <p class="product-count">5 Produk</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    </section>
-
-<!-- Trending Products Section HTML -->
-<section class="trending-products py-5 pt-3">
-    <div class="container">
-        <h2 class="category-title text-center mb-5">Layanan Populer Kami</h2>
-
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            <!-- Product Cards - Each card in its own column -->
-            @foreach ($layananPerKategori as $layanan)
-            <div class="col">
-                {{-- <a href="{{ route('detail-service', $service->slug) }}" class="service-card-link"> --}}
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="productContainer">
+                <!-- Product Cards - Each card in its own column -->
+                @foreach ($layananPerKategori as $layanan)
+                <div class="col service-item" data-category="{{ $layanan->kategori }}" data-name="{{ strtolower($layanan->nama) }}">
                     <div class="product-card h-100">
                         <div class="position-relative">
                             <span class="badge bg-primary discount-badge">13% Off</span>
@@ -185,7 +157,7 @@
                         <div class="card-body d-flex flex-column">
                             <h3 class="product-name category-name">{{ $layanan->nama }}</h3>
                             <div class="price-container">
-                                <span class="fs-5 font-weigh-bold">{{ $layanan->harga }}</span>
+                                <span class="fs-5 font-weight-bold">{{ $layanan->harga }}</span>
                             </div>
                             <div class="rating">
                                 <i class="bi bi-star-fill"></i>
@@ -197,12 +169,69 @@
                             <a href="{{ route('detail-service', $layanan->slug) }}" class="btn btn-primary buy-now-btn mt-auto">Lihat Detail</a>
                         </div>
                     </div>
-                {{-- </a> --}}
+                </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
-    </div>
-</section>
+    </section>
 
-    
+    <script>
+        // Search functionality
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            filterServices();
+        });
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                filterServices();
+            }
+        });
+
+        // Category filter functionality
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const category = this.dataset.category;
+                document.getElementById('categoryDropdown').textContent = this.textContent;
+                filterServices();
+            });
+        });
+
+        function filterServices() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedCategory = document.getElementById('categoryDropdown').textContent.toLowerCase();
+            const serviceItems = document.querySelectorAll('.service-item');
+
+            serviceItems.forEach(item => {
+                const itemName = item.dataset.name;
+                const itemCategory = item.dataset.category;
+                
+                const matchesSearch = searchTerm === '' || itemName.includes(searchTerm);
+                const matchesCategory = selectedCategory === 'pilih kategori' || 
+                                      selectedCategory === 'semua kategori' || 
+                                      itemCategory === selectedCategory;
+
+                if (matchesSearch && matchesCategory) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 @endsection
