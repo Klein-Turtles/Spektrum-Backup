@@ -51,14 +51,14 @@
                                 <i class="bi bi-funnel"></i> {{ request('kategori') ?? 'Semua Kategori' }}
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown">                                                               <li>
-                                    <a class="dropdown-item" href="{{ route('service') }}">
+                                    <a class="dropdown-item" href="{{ route('product') }}">
                                         Semua Kategori
                                     </a>
                                 </li>
                                 <li><hr class="dropdown-divider"></li>
                                 @foreach ($kategorilist as $kategori)
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('service', ['kategori' => $kategori]) }}">
+                                        <a class="dropdown-item" href="{{ route('product', ['kategori' => $kategori]) }}">
                                             {{ $kategori }}
                                         </a>
                                     </li>
@@ -92,7 +92,7 @@
                             <div class="price-container">
                                 <span class="fs-5 font-weight-bold">{{ number_format($product->harga, 0, ',', '.')  }}</span>
                             </div>
-                            <a href="{{ route('detail-service', $product->slug) }}" class="btn btn-primary buy-now-btn mt-auto">Lihat Detail</a>
+                            <a href="{{ route('detail-product', $product->slug) }}" class="btn btn-primary buy-now-btn mt-auto">Lihat Detail</a>
                         </div>
                     </div>
                 </div>

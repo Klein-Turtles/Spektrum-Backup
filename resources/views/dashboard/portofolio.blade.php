@@ -50,7 +50,7 @@
     @endpush
 
 @section('content')
-    <button href='{{ route('input_porto') }}'class="btn btn-primary">Tambah data</button>
+    <a  href='{{ route('input_porto') }}'class="btn btn-primary">Tambah data</a>
 
 
     

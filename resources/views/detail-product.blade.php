@@ -16,8 +16,8 @@
   <div class="project-showcase">
     <!-- Left column - Project Image/Laptop Mockup -->
     <div class="project-image">
-      @if ($layanan->gambar)
-        <img src="{{ asset('storage/' . $layanan->gambar) }}" alt="{{ $layanan->nama }}">
+      @if ($product->gambar)
+        <img src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->nama }}">
       @else
         <img src="{{ asset('images/default-project.png') }}" alt="Project Preview">
       @endif
@@ -25,12 +25,12 @@
   
   <div> <!-- Right column - Project Details -->
     <div class="project-details">
-      <h1 class="project-title" >{{ $layanan->nama }}</h1>
-      <h5 >{{ $layanan->kategori }}</h5>
+      <h1 class="project-title" >{{ $product->nama }}</h1>
+      <h5 >{{ $product->kategori }}</h5>
       <div class="project-meta py-3">
         <div class="meta-item ">
           <div class="meta-label">Harga</div>
-          <div class="meta-value">{{ $layanan->harga ?? 'No client available.'}}</div>
+          <div class="meta-value">{{ $product->harga ?? 'No client available.'}}</div>
         </div>
       </div>      
     </div>
@@ -46,7 +46,7 @@
       <h1>Deskripsi Produk</h1>
     </div>      
   <div class="cell">
-    <div class="product-intro">{{ $layanan->deskripsi?? 'ninuninuninu' }}</div>
+    <div class="product-intro">{{ $product->deskripsi?? 'ninuninuninu' }}</div>
    </div>
 
             
