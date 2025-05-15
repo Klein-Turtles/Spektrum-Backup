@@ -8,23 +8,24 @@ use Illuminate\Http\Request;
 
 class ServicePageController extends Controller
 {
-        public function service()
+        public function service(Request $request)
     {
 
-        // Ambil semua kategori unik
         $kategorilist = Service::select('kategori')->distinct()->pluck('kategori');
 
-        // Ambil satu layanan untuk tiap kategori
-        $layananPerKategori = collect();
+    $query = Service::query();
 
-        foreach ($kategorilist as $kategori) {
-            $layanan = Service::where('kategori', $kategori)->inRandomOrder()->first();
-            if ($layanan) {
-                $layananPerKategori->push($layanan);
-            }
-        }
+    if ($request->has('kategori') && $request->kategori !== '') {
+        $query->where('kategori', $request->kategori);
+    }
 
-        return view('services', compact('layananPerKategori'));
+    if ($request->has('q') && $request->q !== '') {
+        $query->where('nama', 'like', '%' . $request->q . '%');
+    }
+
+    $layanan = $query->paginate(8)->withQueryString(); // 8 per halaman, withQueryString biar query tetap (kategori nggak hilang saat klik halaman)
+
+        return view('services', compact('layanan', 'kategorilist'));
     }
 
     public function product($page)
@@ -73,7 +74,7 @@ class ServicePageController extends Controller
 
     public function create()
     {
-        $kategori = ['IoT', 'Automation', 'Robotics', 'TechFarm']; // atau ambil dari model Category
+        $kategori = ['Internet Of Things', 'Automation', 'Robotics', 'Tech Farm', '3D Printing' ,'Renewable Energy', 'Lasser Cutting', 'Workshop IoT']; // atau ambil dari model Category
         return view('dashboard.adminservice.create', compact('kategori'));
     }
 
@@ -83,7 +84,8 @@ class ServicePageController extends Controller
             'nama' => 'required|string|max:255',
             'kategori' => 'required|string',
             'deskripsi'=>'required|string|max:1000',
-            'gambar'=>'required|image|mimes:jpg,jpeg,png,gif'
+            'gambar'=>'required|image|mimes:jpg,jpeg,png,gif',
+            'harga'=>'required|string|max:255'
         ]);
 
         $gambarPath = $request->file('gambar')->store('service', 'public');
@@ -101,32 +103,36 @@ class ServicePageController extends Controller
     public function edit($id)
     {
         $layanan = Service::findOrFail($id);
-        $kategori = ['IoT', 'Automation', 'Robotics', 'TechFarm'];
+        $kategori = ['Internet Of Things', 'Automation', 'Robotics', 'Tech Farm', '3D Printing' ,'Renewable Energy', 'Lasser Cutting', 'Workshop IoT'];
         return view('dashboard.adminservice.edit', compact('layanan', 'kategori'));
     }
 
     public function update(Request $request, Service $layanan )
     {
         $request->validate([
-            'nama' => 'required|string|max:255',
-            'kategori' => 'required|string',
-            'deskripsi'=>'required|string|max:1000',
-            'gambar'=>'required|image|mimes:jpg,jpeg,png,gif'
-        ]);
+                'nama' => 'required|string|max:255',
+                'kategori' => 'required|string',
+                'deskripsi' => 'required|string|max:1000',
+                'gambar' => 'nullable|image|mimes:jpg,jpeg,png,gif',
+                'harga' => 'required|numeric'
+            ]);
 
-        if ($request->hasFile('gambar')) {
+            $data = [
+                'nama' => $request->nama,
+                'deskripsi' => $request->deskripsi,
+                'kategori' => $request->kategori,
+                'harga' => $request->harga,
+            ];
+
+            // hanya update gambar jika ada file gambar baru
+            if ($request->hasFile('gambar')) {
                 $gambarPath = $request->file('gambar')->store('service', 'public');
-                $layanan->gambar = $gambarPath;
+                $data['gambar'] = $gambarPath;
             }
 
-        $layanan->update([
-            'nama'=>$request->nama,
-            'deskripsi'=>$request->deskripsi,
-            'gambar'=>$gambarPath,
-            'kategori'=>$request->kategori,
-            'harga'=>$request->harga
-        ]);
-        return redirect()->route('admin.services.index')->with('success', 'Layanan berhasil diupdate.');
+            $layanan->update($data);
+
+            return redirect()->route('admin_service')->with('success', 'Layanan berhasil diupdate.');
     }
 
     public function destroy(Service $layanan)

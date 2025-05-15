@@ -79,9 +79,9 @@ Route::get('/dashboard/input-service', [ServicePageController::class, 'create'])
 Route::post('/dashboard/input-service', [ServicePageController::class, 'store'])
 ->middleware(['auth', 'verified'])->name('service_store');
 
-Route::get('/dashboard/service/{id}/edit', [ServicePageController::class, 'edit'])->name('edit_service');
-Route::put('/dashboard/service/{id}', [ServicePageController::class, 'update'])->name('update_service');
-Route::get('/dashboard/service/{id}/hapus', [ServicePageController::class, 'destroy'])->name('destroy_service');
+Route::get('/dashboard/service/{layanan}/edit', [ServicePageController::class, 'edit'])->name('edit_service');
+Route::put('/dashboard/service/{layanan}', [ServicePageController::class, 'update'])->name('update_service');
+Route::delete('/dashboard/service/{layanan}/hapus', [ServicePageController::class, 'destroy'])->name('destroy_service');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
