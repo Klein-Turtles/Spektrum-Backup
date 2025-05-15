@@ -15,7 +15,7 @@
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{ route('dashboard') }}" class="nav-link ">
                     <i class="bi bi-speedometer2"></i>
                     <span class="sidebar-item-text">Dashboard</span>
                 </a>

@@ -31,7 +31,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 mb-3 mb-md-0">
-                    <form action="{{ route('service') }}" method="GET" class="w-100">
+                    <form action="{{ route('services') }}" method="GET" class="w-100">
                         <div class="search-box d-flex">
                             <i class="bi bi-search search-icon"></i>
                             <input type="text" class="form-control" name="q" placeholder="Cari layanan terbaik disini!" value="{{ request('q') }}">
@@ -50,20 +50,19 @@
                             <button class="btn dropdown-toggle w-100" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-funnel"></i> {{ request('kategori') ?? 'Semua Kategori' }}
                             </button>
-                            <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown">
+                            <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown">                                                               <li>
+                                    <a class="dropdown-item" href="{{ route('services') }}">
+                                        Semua Kategori
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
                                 @foreach ($kategorilist as $kategori)
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('service', ['kategori' => $kategori]) }}">
+                                        <a class="dropdown-item" href="{{ route('services', ['kategori' => $kategori]) }}">
                                             {{ $kategori }}
                                         </a>
                                     </li>
                                 @endforeach
-                                <li><hr class="dropdown-divider"></li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('service') }}">
-                                        Semua Kategori
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
