@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class Portofolio extends Model
+class Service extends Model
 {
-    use HasFactory,HasSlug;
+        use HasFactory,HasSlug;
 
-    protected $table = 'portofolio';
-    protected $fillable = ['nama','deskripsi_singkat', 'deskripsi','client','tahun','spesifikasi','gambar'];
+    protected $table = 'service';
+    protected $fillable = ['nama','kategori', 'deskripsi','gambar','harga'];
 
     public function getSlugOptions(): SlugOptions
     {
