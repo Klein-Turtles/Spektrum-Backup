@@ -1,16 +1,11 @@
 @extends('layouts.app')
 
 @push('styles')
-@vite('resources/sass/pages/portofolio/detail-porto.scss')
+@vite('resources/sass/pages/product/detail-product.scss')
 @endpush
 
 @section('content')
 <div class="portfolio-container">
-  {{-- <!-- Back navigation -->
-  <div class="back-navigation">
-    <a href="{{ route('portofolio') }}"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-  </div> --}}
-  
 
   <!-- Project Showcase -->
   <div class="project-showcase">
@@ -23,14 +18,18 @@
       @endif
   </div>  
   
+  
   <div> <!-- Right column - Project Details -->
     <div class="project-details">
       <h1 class="project-title" >{{ $product->nama }}</h1>
       <h5 >{{ $product->kategori }}</h5>
+      <p class="text-secondary mt-3">
+      Falcon Pro V8 adalah drone mini profesional dengan kamera 4K, teknologi stabilisasi gyro, serta kemampuan terbang hingga 30 menit. Cocok untuk pemula maupun kreator konten.
+      </p>
       <div class="project-meta py-3">
         <div class="meta-item ">
           <div class="meta-label">Harga</div>
-          <div class="meta-value">{{ $product->harga ?? 'No client available.'}}</div>
+          <div class="meta-value">{{ number_format($product->harga, 0, ',', '.') ?? 'No client available.'}}</div>
         </div>
       </div>      
     </div>
@@ -46,10 +45,14 @@
       <h1>Deskripsi Produk</h1>
     </div>      
   <div class="cell">
-    <div class="product-intro">{{ $product->deskripsi?? 'ninuninuninu' }}</div>
-   </div>
-
-            
+    <div class="product-intro">      
+      <ul>
+        @foreach(explode(',', $product->deskripsi) as $item)
+          <li>{{ trim($item) }}</li>
+        @endforeach
+      </ul>
+    </div>
+  </div>
 </div>
 
 @endsection

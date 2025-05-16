@@ -11,14 +11,12 @@
             data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ url('/images/service-page.png')}}" class="d-block w-100" alt="...">
+                    <img src="{{ url('/images/product-page.png')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption custom-caption">
-                        <h2>Automatic Hydroponic System</h2>
-                        <p class="mb-0">Solusi pertanian cerdas untuk budidaya tanaman yang efisien dan berkelanjutan.
-                            Kontrol otomatis untuk penyiraman, pencahayaan, dan nutrisi — cocok untuk industri pertanian
-                            modern.</p>
-                        <p class="price-highlight">Mulai dari Rp399.000 – Dukung Pertanian Cerdas Modern</p>
-                        <a class="btn btn-primary" href="contact.hmtl" type="button">Booking Sekarang</a>
+                        <h2>Automatic Solar Panel</h2>
+                        <p class="mb-0">Solusi Modern & Efisien untuk Berbagai Kebutuhan Industri</p>
+                        <p class="price-highlight">Mulai dari Rp699.000 – Instalasi Cepat & Support Penuh</p>
+                        <a class="btn btn-primary" href="contact.hmtl" type="button">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -34,7 +32,7 @@
                     <form action="{{ route('product') }}" method="GET" class="w-100">
                         <div class="search-box d-flex">
                             <i class="bi bi-search search-icon"></i>
-                            <input type="text" class="form-control" name="q" placeholder="Cari layanan terbaik disini!" value="{{ request('q') }}">
+                            <input type="text" class="form-control" name="q" placeholder="Cari produk terbaik disini!" value="{{ request('q') }}">
                             @if (request('kategori'))
                                 <input type="hidden" name="kategori" value="{{ request('kategori') }}">
                             @endif
@@ -74,7 +72,7 @@
     <!-- Trending Products Section HTML -->
     <section class="trending-products py-5 pt-3">
         <div class="container">
-            <h2 class="category-title text-center mb-5">Layanan Kami</h2>
+            <h2 class="category-title text-center mb-5">Produk Populer</h2>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="productContainer">
                 <!-- Product Cards - Each card in its own column -->
@@ -82,7 +80,7 @@
                 <div class="col service-item" data-category="{{ $product->kategori }}" data-name="{{ strtolower($product->nama) }}">
                     <div class="product-card h-100">
                         <div class="position-relative">
-                            <span class="badge bg-primary discount-badge">13% Off</span>
+                            {{-- <span class="badge bg-primary discount-badge">13% Off</span> --}}
                             <img src="{{ asset('storage/' . $product->gambar)}}" class="card-img-top product-img"
                                 alt="{{ $product->nama }}">
                         </div>

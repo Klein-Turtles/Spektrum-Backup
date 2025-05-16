@@ -82,7 +82,7 @@
                 <div class="col service-item" data-category="{{ $service->kategori }}" data-name="{{ strtolower($service->nama) }}">
                     <div class="product-card h-100">
                         <div class="position-relative">
-                            <span class="badge bg-primary discount-badge">13% Off</span>
+                            {{-- <span class="badge bg-primary discount-badge">13% Off</span> --}}
                             <img src="{{ asset('storage/' . $service->gambar)}}" class="card-img-top product-img"
                                 alt="{{ $service->nama }}">
                         </div>

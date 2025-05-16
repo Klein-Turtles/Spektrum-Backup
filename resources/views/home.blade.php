@@ -6,6 +6,8 @@
 
 @section('content')
 
+
+
 <!-- Carousel Container -->
 <div class="carousel-container overflow-hidden position-relative">
   <div id="carouselExampleSlidesOnly" class="carousel slide d-none d-md-block" data-bs-ride="carousel"
@@ -275,68 +277,143 @@
   </div>
 </div>
 
-<!-- Section Testimonials -->
+{{-- <!-- Section Testimonials -->
 <section class="testimonials bg-white">
   <div class="container py-5">
     <div class="tagembed-widget" style="width:100%;height:100%" data-widget-id="2166922" data-tags="false"
       view-url="https://widget.tagembed.com/2166922"></div>
   </div>
-</section>
+</section> --}}
 
-
-<section id="faq" class="py-0 pb-0 bg-white">
-  <div class="container pb-0">
-    <div class="row align-items-center">
-      <!-- Gambar FAQ -->
-      <div class="col-lg-5 mb-0 text-center">
-        <img src="{{ url('/images/faq.png') }}" alt="FAQ Image" class="img-fluid">
-      </div>
-      <!-- Pertanyaan FAQ -->
-      <div class="col-lg-7">
-        <h2 class="mb-3">FAQ</h2>
-        <p class="mb-4">Pertanyaan yang sering diajukan oleh pelanggan Spektrum Teknologi</p>
-        <div class="accordion" id="faqAccordion">
-          <div class="accordion-item">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-              aria-expanded="true" aria-controls="collapseOne">
-              Apa itu layanan Spektrum Teknologi?
-            </button>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Layanan teknologi inovatif mulai dari website development, IoT, hingga integrasi sistem berbasis AI.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Apakah bisa custom project sesuai kebutuhan?
-            </button>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Bisa banget! Kami menyediakan layanan yang fleksibel sesuai kebutuhan Anda, dari skala kecil hingga
-                enterprise.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Bagaimana cara konsultasi dengan Spektrum Teknologi?
-            </button>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Anda bisa menghubungi kami melalui halaman kontak, email resmi, atau WhatsApp business kami.
-              </div>
-            </div>
-          </div>
+<div class="container">
+    <div class="header">
+        <div>
+            <h1 class="page-title">F.A.Q</h1>
+            <p class="page-subtitle">Temukan jawaban untuk pertanyaan umum tentang layanan dan profil CV. Spektrum Teknologi</p>
         </div>
-      </div>
     </div>
-  </div>
-</section>
+
+    <div class="content-wrapper">
+        <div class="banner">
+            <img src="/images/about/hah.jpg" alt="CV. Spektrum Teknologi" class="banner-image">
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-list" x-data="{ activeAccordion: 0 }">
+                <div class="faq-item">
+                    <div class="faq-question" :class="{ 'active': activeAccordion === 1 }" @click="activeAccordion = activeAccordion === 1 ? null : 1">
+                        <div class="question-content">
+                            <span class="faq-number">01</span>
+                            <span class="question-text">Apa bidang usaha utama CV. Spektrum Teknologi?</span>
+                        </div>
+                        <div class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer" x-show="activeAccordion === 1" x-collapse>
+                        CV. Spektrum Teknologi bergerak dalam bidang Internet of Things (IoT), Robotika, dan Renewable Energy. Perusahaan ini melayani pengerjaan proyek dan pembuatan produk-produk berbasis IoT, robotika untuk pabrik dan program pendidikan, serta pemasangan instalasi Pembangkit Listrik Tenaga Surya (PLTS).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" :class="{ 'active': activeAccordion === 2 }" @click="activeAccordion = activeAccordion === 2 ? null : 2">
+                        <div class="question-content">
+                            <span class="faq-number">02</span>
+                            <span class="question-text">Kapan CV. Spektrum Teknologi didirikan?</span>
+                        </div>
+                        <div class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer" x-show="activeAccordion === 2" x-collapse>
+                        CV. Spektrum Teknologi didirikan pada tanggal 20 Februari 2019 dan beralamat di Jalan Bantaran Indah Blok A No.14A, Kelurahan Tulusrejo, Kecamatan Lowokwaru, Kota Malang, Jawa Timur 65141.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" :class="{ 'active': activeAccordion === 3 }" @click="activeAccordion = activeAccordion === 3 ? null : 3">
+                        <div class="question-content">
+                            <span class="faq-number">03</span>
+                            <span class="question-text">Apa saja layanan yang ditawarkan oleh CV. Spektrum Teknologi?</span>
+                        </div>
+                        <div class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer" x-show="activeAccordion === 3" x-collapse>
+                        CV. Spektrum Teknologi menawarkan layanan dalam bidang:
+                        <ul>
+                            <li>Internet of Things (IoT)</li>
+                            <li>Embedded System</li>
+                            <li>Industrial Automations</li>
+                            <li>Robotics</li>
+                            <li>3D Printing</li>
+                            <li>Renewable Energy</li>
+                            <li>Pelatihan IoT, Robotik, dan PLC</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" :class="{ 'active': activeAccordion === 4 }" @click="activeAccordion = activeAccordion === 4 ? null : 4">
+                        <div class="question-content">
+                            <span class="faq-number">04</span>
+                            <span class="question-text">Bagaimana cara menghubungi CV. Spektrum Teknologi?</span>
+                        </div>
+                        <div class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer" x-show="activeAccordion === 4" x-collapse>
+                        Anda dapat menghubungi CV. Spektrum Teknologi melalui:
+                        <ul>
+                            <li>Telepon/WA: +62 85 655 655 813</li>
+                            <li>Email: spektrum.teknologi@gmail.com atau info@myspektrum-teknologi.com</li>
+                            <li>Instagram: @myspektrum.teknologi</li>
+                            <li>Website: www.myspektrum-teknologi.com</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" :class="{ 'active': activeAccordion === 5 }" @click="activeAccordion = activeAccordion === 5 ? null : 5">
+                        <div class="question-content">
+                            <span class="faq-number">05</span>
+                            <span class="question-text">Apakah CV. Spektrum Teknologi memiliki legalitas perusahaan?</span>
+                        </div>
+                        <div class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer" x-show="activeAccordion === 5" x-collapse>
+                        Ya, CV. Spektrum Teknologi memiliki legalitas perusahaan lengkap:
+                        <ul>
+                            <li>Akta Notaris: 20</li>
+                            <li>Surat Izin Usaha Perdagangan (SIUP): 9120400360755</li>
+                            <li>Tanda Daftar Perusahaan: AH-0014584-AH.01.14. Tahun 2019</li>
+                            <li>NPWP: 90.693.433.6-652.000</li>
+                            <li>Surat Keterangan Terdaftar: S-1827KT/WPJ.12/KP.0103/2019</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@push('scripts')
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+@endpush
 
 @endsection
