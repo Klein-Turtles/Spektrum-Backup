@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServicePageController;
 use App\Http\Controllers\inputPortofolioController;
-
+use App\Http\Controllers\productPageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,15 +23,17 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/services-{page}', [ServicePageController::class, 'service'])->name('services.show');
-Route::get('/services/selengkapnya', [ServicePageController::class, 'layananPopuler'])->name('layananPopuler');
+Route::get('/services', [ServicePageController::class, 'service'])->name('services');
 
 Route::get('/products-{page}', [ServicePageController::class, 'product'])->name('products.show');
 
 Route::get('/portofolio', [ServicePageController::class, 'portofolio'])->name('portofolio');
 Route::get('/portofolio/detail-porto/{slug}', [ServicePageController::class, 'detailPorto'])->name('detail-porto');
 
-Route::get('/product', [ServicePageController::class, 'product'])->name('product');
+Route::get('/service', [ServicePageController::class, 'service'])->name('service');
+Route::get('/service/detail-service/{slug}', [ServicePageController::class, 'detailService'])->name('detail-service');
+
+Route::get('/product', [productPageController::class, 'product'])->name('product');
 Route::get('/product/detail-product/{slug}', [ServicePageController::class, 'detailProduct'])->name('detail-product');
 
 Route::get('/admin', function () {
@@ -68,11 +70,18 @@ Route::get('/dashboard/product', function () {
     return view('dashboard.product');
 })->middleware(['auth', 'verified'])->name('admin_product');
 
-Route::get('/dashboard/service', function () {
-    return view('dashboard.adminservice.service');
-})->middleware(['auth', 'verified'])->name('admin_service');
+Route::get('/dashboard/service', [ServicePageController::class, 'index']
+)->middleware(['auth', 'verified'])->name('admin_service');
 
+Route::get('/dashboard/input-service', [ServicePageController::class, 'create'])
+->middleware(['auth', 'verified'])->name('service_input');
 
+Route::post('/dashboard/input-service', [ServicePageController::class, 'store'])
+->middleware(['auth', 'verified'])->name('service_store');
+
+Route::get('/dashboard/service/{layanan}/edit', [ServicePageController::class, 'edit'])->name('edit_service');
+Route::put('/dashboard/service/{layanan}', [ServicePageController::class, 'update'])->name('update_service');
+Route::delete('/dashboard/service/{layanan}/hapus', [ServicePageController::class, 'destroy'])->name('destroy_service');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

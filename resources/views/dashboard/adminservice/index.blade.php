@@ -49,12 +49,24 @@
         </style>
     @endpush
 
+
 @section('content')
-    <button href='{{ route('input_porto') }}'class="btn btn-primary">Tambah data</button>
+<div class="container mx-auto">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold">Daftar Layanan</h1>
+        <a href="{{ route('service_input') }}" class="btn btn-primary btn-edit me-1 " >
+            Tambah Layanan
+        </a>
+    </div>
+
+    @if(session('success'))
+        <div class="bg-green-200 text-green-800 p-3 rounded mb-4">
+            {{ session('success') }}
+        </div>
+    @endif
 
 
-    
-            <div class="card">
+    <div class="card">
         <div class="card-header text-center">
             <h4 class="mb-0">Daftar Nama</h4>
         </div>
@@ -68,12 +80,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($portofolio as $porto)
+                    @foreach ($layanan as $service)
                     <tr>
-                        <td>{{ $porto->nama }}</td>
-                        <td class="text-end actions">
-                            <a href="{{ route('edit_porto',$porto->id) }}" class="btn btn-sm btn-edit me-1">Edit</a>
-                            <button class="btn btn-sm btn-delete">Hapus</button>
+                        <td>{{ $service->nama }}</td>
+                        <td class="text-end actions d-flex justify-content-end">
+                            <a href="{{ route('edit_service', $service->id) }}" class="btn btn-sm btn-edit me-1">Edit</a>
+                            <form action="{{ route('destroy_service', $service->id) }}" method="POST"
+                                 onsubmit="return confirm('Yakin ingin menghapus layanan ini?');">
+                    @csrf
+                     @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Hapus</button>
+                            </form>
                         </td> 
                     </tr>
                     @endforeach
@@ -81,4 +98,7 @@
             </table>
         </div>
     </div>
+
+    
+</div>
 @endsection
