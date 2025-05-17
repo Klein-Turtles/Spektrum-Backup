@@ -28,23 +28,6 @@ class ServicePageController extends Controller
         return view('services', compact('layanan', 'kategorilist'));
     }
 
-    public function product($page)
-    {
-        $availablePages = [
-            'sensor',
-            'iot',
-            'industry',
-            'energy',
-            'edukasi',
-            'selengkapnya'
-        ];
-
-        if (!in_array($page, $availablePages)) {
-            abort(404);
-        }
-
-        return view('products.' . $page);
-    }
 
     public function portofolio()
     {
@@ -69,7 +52,7 @@ class ServicePageController extends Controller
     public function detailService($slug)
     {
         $layanan = Service::where('slug', $slug)->firstOrFail();
-        return view('services.detail-service', compact('layanan'));
+        return view('detail-service', compact('layanan'));
     }
 
     public function create()
