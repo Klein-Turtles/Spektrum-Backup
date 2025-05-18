@@ -85,7 +85,7 @@
             <p class="mb-4">Kembangkan bisnis dengan layanan digital terbaik dari Spektrum Teknologi. Mulai dari
               pengembangan sistem IoT, Robotic, Tech Farm hingga integrasi AI – semua ada dalam satu solusi
               terpercaya!</p>
-            <a href="#" class="btn btn-offering">Konsultasi Gratis</a>
+            <a href="https://wa.me/085730220374" class="btn btn-offering">Konsultasi Gratis</a>
           </div>
         </div>
         <div class="col-lg-5 position-relative">
@@ -111,12 +111,10 @@
       <div class="col-md-6 col-lg-4">
         <div class="card-hover position-relative overflow-hidden rounded-4">
           <img src="{{ url('/images/categories-services/satelite-training-system.png') }}" class="w-100 h-100 object-fit-cover card-img">
-          <div class="position-absolute top-50 start-50 translate-middle text-white text-center z-2">
-            <span
-              class="position-absolute top-50 start-50 translate-middle text-white px-3 py-2 rounded-3 fw-bold fs-5 text-nowrap text-bg">
-              Satellite Training System
-            </span>
-          </div>
+          <span
+            class="position-absolute top-50 start-50 translate-middle text-white px-3 py-2 rounded-3 fw-bold fs-5 text-nowrap text-bg">
+            Satellite Training System
+          </span>
           <div class="overlay d-flex align-items-center justify-content-center">
             <div class="overlay-bg text-white text-center px-4 py-3 rounded-4">
               <h5 class="fw-bold">Satellite Training System</h5>
@@ -229,7 +227,7 @@
       </div>
 
       <div class="text-center mt-4">
-        <a href="services.html" class="btn-selengkapnya-bottom">Selengkapnya <i class="fas fa-arrow-right"></i>
+        <a href="{{ route('portofolio') }}" class="btn-selengkapnya-bottom">Selengkapnya <i class="fas fa-arrow-right"></i>
         </a>
       </div>
     </div>

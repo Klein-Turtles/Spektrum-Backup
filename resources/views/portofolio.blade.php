@@ -33,7 +33,8 @@
                 <a href="{{ route('detail-porto', $porto->slug) }}" class="portfolio-card-link">
                     <div class="portfolio-card">
                         <div class="portfolio-img-container">
-                            <img src="{{ asset('storage/' . $porto->gambar) }}" class="portfolio-img" alt="{{ $porto->nama }}">
+                            <img src="{{ asset('storage/' . $porto->gambar) }}" class="portfolio-img" loading="lazy"
+                             alt="{{ $porto->nama }}">
                         </div>
                         <div class="portfolio-info">
                             <h3 class="portfolio-title">{{ $porto->nama }}</h3>

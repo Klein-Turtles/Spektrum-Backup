@@ -7,11 +7,11 @@
     <div class="footer-section">
       <h3>Sub Links</h3>
       <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
+        <a href="{{ route('home') }}">Home</a>
+        <a href="{{ route('services') }}">Services</a>
+        <a href="{{ route('product') }}">Products</a>
+        <a href="{{ route('about') }}">About Us</a>
+        <a href="https://wa.me/085730220374">Contact</a>
       </div>
     </div>
     

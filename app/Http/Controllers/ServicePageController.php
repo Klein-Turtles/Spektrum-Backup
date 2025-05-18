@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Portofolio;
+
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -29,17 +29,7 @@ class ServicePageController extends Controller
     }
 
 
-    public function portofolio()
-    {
 
-        $portofolio = Portofolio::paginate(8);
-        return view('portofolio', compact('portofolio'));
-    }
-    public function detailporto($slug)
-    {
-        $portofolio = Portofolio::where('slug', $slug)->firstOrFail();
-        return view('detail-porto', compact('portofolio'));
-    }
 
 
     // Services
