@@ -75,7 +75,7 @@
                     @foreach ($portofolio as $porto)
                     <tr>
                         <td>{{ $porto->nama }}</td>
-                            <td class="text-end actions">
+                            <td class="text-end actions d-flex justify-content-end">
                             <a href="{{ route('edit_porto',$porto->id) }}" class="btn btn-sm btn-edit me-1">Edit</a>
                                 <form action="{{ route('delete_porto', $porto->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus Portofolio ini?');">
                                 @csrf
