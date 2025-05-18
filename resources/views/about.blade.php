@@ -3,6 +3,8 @@
 @push('styles')
 @vite('resources/sass/pages/about.scss')
 
+@section('title', 'About')
+
 @section('content')
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
