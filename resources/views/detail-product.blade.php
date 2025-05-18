@@ -4,6 +4,8 @@
 @vite('resources/sass/pages/product/detail-product.scss')
 @endpush
 
+@section('title', 'Detail Produk')
+
 @section('content')
 <div class="portfolio-container">
 

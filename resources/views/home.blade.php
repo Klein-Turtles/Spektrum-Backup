@@ -4,9 +4,9 @@
     @vite('resources/sass/pages/home.scss')
 @endpush
 
+@section('title', 'Home')
+
 @section('content')
-
-
 
 <!-- Carousel Container -->
 <div class="carousel-container overflow-hidden position-relative">

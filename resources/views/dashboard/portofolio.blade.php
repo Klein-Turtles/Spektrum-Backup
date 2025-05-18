@@ -49,6 +49,8 @@
         </style>
     @endpush
 
+
+@section('title', 'Portofolio')
 @section('content')
     <a  href='{{ route('input_porto') }}'class="btn btn-primary">Tambah data</a>
 

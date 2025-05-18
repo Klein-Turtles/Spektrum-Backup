@@ -4,6 +4,8 @@
 @vite('resources/sass/pages/services/detail-services.scss')
 @endpush
 
+@section('title', 'Detail Portofolio')
+
 @section('content')
 <div class="portfolio-container">
   {{-- <!-- Back navigation -->

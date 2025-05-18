@@ -4,6 +4,8 @@
 @push('styles')
 @vite('resources/sass/pages/product/main_product.scss')
 
+@section('title', 'Produk')
+
 @section('content')
     <!-- Carousel Container -->
     <div class="carousel-container overflow-hidden position-relative">

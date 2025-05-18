@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
-    @push('styles')
-        @vite('resources/sass/pages/portofolio/portofolio.scss')
-    @endpush
+@push('styles')
+    @vite('resources/sass/pages/portofolio/portofolio.scss')
+@endpush
+
+@section('title', 'Portofolio')
 
 @section('content')
 

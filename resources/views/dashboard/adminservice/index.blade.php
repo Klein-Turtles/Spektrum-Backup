@@ -49,6 +49,7 @@
         </style>
     @endpush
 
+@section('title', 'Services')
 
 @section('content')
 <div class="container mx-auto">
