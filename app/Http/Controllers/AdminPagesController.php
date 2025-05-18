@@ -10,9 +10,4 @@ class AdminPagesController extends Controller
     {
         return view('dashboard.portofolio');
     }
-
-    public function admin_produk ()
-    {
-        return view('dashboard.produk');
-    }
 }

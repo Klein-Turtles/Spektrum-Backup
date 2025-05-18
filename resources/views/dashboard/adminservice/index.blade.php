@@ -60,7 +60,7 @@
     </div>
 
     @if(session('success'))
-        <div class="bg-green-200 text-green-800 p-3 rounded mb-4">
+        <div class="bg-green-200 text-green-800 p-3 rounded mb-4 alert alert-success" role="alert">
             {{ session('success') }}
         </div>
     @endif

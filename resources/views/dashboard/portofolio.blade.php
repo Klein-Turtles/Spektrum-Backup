@@ -52,7 +52,11 @@
 @section('content')
     <a  href='{{ route('input_porto') }}'class="btn btn-primary">Tambah data</a>
 
-
+            @if(session('success'))
+        <div class="bg-green-200 text-green-800 p-3 rounded mb-4  alert alert-success" role="alert"">
+            {{ session('success') }}
+        </div>
+        @endif
     
             <div class="card">
         <div class="card-header text-center">
@@ -71,10 +75,14 @@
                     @foreach ($portofolio as $porto)
                     <tr>
                         <td>{{ $porto->nama }}</td>
-                        <td class="text-end actions">
+                            <td class="text-end actions d-flex justify-content-end">
                             <a href="{{ route('edit_porto',$porto->id) }}" class="btn btn-sm btn-edit me-1">Edit</a>
-                            <button class="btn btn-sm btn-delete">Hapus</button>
-                        </td> 
+                                <form action="{{ route('delete_porto', $porto->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus Portofolio ini?');">
+                                @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-delete">Hapus</button>
+                                </form>
+                            </td> 
                     </tr>
                     @endforeach
                 </tbody>

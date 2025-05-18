@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServicePageController;
 use App\Http\Controllers\inputPortofolioController;
+use App\Http\Controllers\PortoPageController;
 use App\Http\Controllers\productPageController;
 
 Route::get('/', function () {
@@ -34,8 +35,8 @@ Route::get('/products', [productPageController::class, 'product'])->name('produc
 Route::get('/products/detail-product/{slug}', [productPageController::class, 'detailProduct'])->name('detail-product');
 
 
-Route::get('/portofolio', [ServicePageController::class, 'portofolio'])->name('portofolio');
-Route::get('/portofolio/detail-porto/{slug}', [ServicePageController::class, 'detailPorto'])->name('detail-porto');
+Route::get('/portofolio', [PortoPageController::class, 'portofolio'])->name('portofolio');
+Route::get('/portofolio/detail-porto/{slug}', [PortoPageController::class, 'detailPorto'])->name('detail-porto');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -73,24 +74,17 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () 
 
 
 
-Route::get('/dashboard/portofolio', function () {
-    return view('dashboard.portofolio');
-})->middleware(['auth', 'verified'])->name('admin_porto');
-
-Route::get('/dashboard/portofolio/input', function () {
-    return view('dashboard.input-porto');
-})->middleware(['auth', 'verified'])->name('input_porto');
-
 Route::middleware('auth')->group(function () {
     // Route untuk menampilkan form input portofolio
-    Route::get('/dashboard/input-porto', [inputPortofolioController::class, 'create'])->name('porto_input');
+    Route::get('/dashboard/input-porto', [PortoPageController::class, 'create'])->name('input_porto');
 
     // Route untuk menyimpan portofolio
-    Route::post('/dashboard/input-porto', [inputPortofolioController::class, 'store'])->name('porto_store');
+    Route::post('/dashboard/input-porto', [PortoPageController::class, 'store'])->name('porto_store');
 
-    Route::get('/dashboard/portofolio', [adminPortoController::class, 'portoShow'])->name('admin_porto');
-    Route::get('/dashboard/portofolio/{id}/edit', [adminPortoController::class, 'edit'])->name('edit_porto');
-    Route::put('/dashboard/portofolio/{id}', [adminPortoController::class, 'update'])->name('update_porto');
+    Route::get('/dashboard/portofolio', [PortoPageController::class, 'portoShow'])->name('admin_porto');
+    Route::get('/dashboard/portofolio/{id}/edit', [PortoPageController::class, 'edit'])->name('edit_porto');
+    Route::put('/dashboard/portofolio/{id}', [PortoPageController::class, 'update'])->name('update_porto');
+    Route::delete('/dashboard/portofolio/{id}/delete',[PortoPageController::class,'destroy'])->name('delete_porto');
 });
 
 

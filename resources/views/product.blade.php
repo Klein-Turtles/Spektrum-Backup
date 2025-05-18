@@ -81,7 +81,7 @@
                     <div class="product-card h-100">
                         <div class="position-relative">
                             {{-- <span class="badge bg-primary discount-badge">13% Off</span> --}}
-                            <img src="{{ asset('storage/' . $product->gambar)}}" class="card-img-top product-img"
+                            <img src="{{ asset('storage/' . $product->gambar)}}" class="card-img-top product-img" loading="lazy"
                                 alt="{{ $product->nama }}">
                         </div>
                         <div class="card-body d-flex flex-column">

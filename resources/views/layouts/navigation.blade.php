@@ -31,7 +31,7 @@
           </li>
         </ul>
         <!-- Contact Button -->
-        <a href="contact.html" class="contact-btn ms-lg-3 d-none d-lg-inline-block">Hubungi Kami</a>
+        <a href="https://wa.me/085730220374" class="contact-btn ms-lg-3 d-none d-lg-inline-block">Hubungi Kami</a>
       </div>
     </div>
   </nav>
