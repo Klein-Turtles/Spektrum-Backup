@@ -231,3 +231,20 @@ body {
     color: #003156;
   }
 }
+
+/* Untuk layar kecil (mobile) */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        position: relative;
+    }
+
+    .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #003156; /* atau warna yang kamu mau */
+    }
+}

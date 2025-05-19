@@ -364,6 +364,25 @@ body {
     transform: scale(1.3);
 }
 
+@media (max-width: 576px) {
+  .client-icon {
+    width: 60px !important; /* perkecil logo di HP */
+  }
+
+  .col-6 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  /* Optional: jika ingin 4 per baris (lebih kecil lagi) */
+  /* 
+  .col-6 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  } 
+  */
+}
+
 /* Footer */
 footer {
   background-color: #003156;

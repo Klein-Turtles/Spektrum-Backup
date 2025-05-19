@@ -120,7 +120,6 @@
               <h5 class="fw-bold">Satellite Training System</h5>
               <p>Sistem pelatihan interaktif yang dirancang untuk membantu pengguna memahami cara kerja satelit
                 melalui simulasi dan visualisasi data secara real-time.</p>
-              <a href="#" class="btn btn-outline-light btn-sm">Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -140,7 +139,6 @@
               <p>Sistem pelatihan interaktif yang dirancang untuk membantu pengguna memahami cara kerja Variable Speed
                 Drive (VSD) dalam mengontrol motor 3 fasa melalui simulasi pengaturan kecepatan dan arah putaran
                 secara real-time.</p>
-              <a href="#" class="btn btn-outline-light btn-sm">Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -160,7 +158,6 @@
               <p>Sistem pelatihan interaktif yang menggunakan PLC dan pneumatik untuk mensimulasikan proses
                 penyortiran otomatis. Trainer ini membantu pengguna memahami cara kerja konveyor, silinder, dan
                 kontrol logika dalam otomasi industri.</p>
-              <a href="#" class="btn btn-outline-light btn-sm">Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -180,7 +177,6 @@
               <p>Simulator elevator edukatif yang memadukan teori dan praktik dalam pemrograman sistem lift.
                 Menyediakan pengalaman hands-on dalam pengoperasian, pemeliharaan, dan troubleshooting sistem
                 elevator.</p>
-              <a href="#" class="btn btn-outline-light btn-sm">Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -200,7 +196,6 @@
               <p>Sistem pelatihan interaktif untuk mempelajari pemrograman dan aplikasi PLC dalam otomasi industri.
                 Dirancang dengan modul praktis yang memungkinkan pengguna mengembangkan keterampilan kontrol logika
                 secara langsung.</p>
-              <a href="#" class="btn btn-outline-light btn-sm">Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -220,7 +215,6 @@
               <p>Sistem panel surya yang dirancang untuk mengoptimalkan konversi energi matahari. Proyek ini
                 mendemonstrasikan implementasi teknologi terbarukan dengan fokus pada efisiensi energi, pemantauan
                 daya, dan integrasi dengan jaringan listrik.</p>
-              <a href="#" class="btn btn-outline-light btn-sm">Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -244,32 +238,32 @@
 
   <div class="row justify-content-center">
     <!-- Logo 1 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4  col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-nasa.svg') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
 
     <!-- Logo 2 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4  col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-jatimpark.svg') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
 
     <!-- Logo 3 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4  col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-um.svg') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
 
     <!-- Logo 4 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4  col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-indigospace.png') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
 
     <!-- Logo 5 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4  col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-asjk.png') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
 
     <!-- Logo 6 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4  col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-drt.png') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
   </div>

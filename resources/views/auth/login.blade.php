@@ -58,16 +58,10 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 offset-md-4 d-flex justify-content-end pe-5 ">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Log in') }}
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot your password?') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>

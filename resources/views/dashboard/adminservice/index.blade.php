@@ -55,7 +55,7 @@
 <div class="container mx-auto">
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold">Daftar Layanan</h1>
-        <a href="{{ route('service_input') }}" class="btn btn-primary btn-edit me-1 " >
+        <a href="{{ route('service_input') }}" class="btn btn-primary me-1 " >
             Tambah Layanan
         </a>
     </div>

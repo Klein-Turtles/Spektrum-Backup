@@ -29,32 +29,32 @@
 <div class="container py-5 bg-white">
   <div class="row justify-content-center">
     <!-- Logo 1 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4 col-sm-3 col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-nasa.svg') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
 
     <!-- Logo 2 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4 col-sm-3 col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-jatimpark.svg') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
 
     <!-- Logo 3 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4 col-sm-3 col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-um.svg') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
 
     <!-- Logo 4 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4 col-sm-3 col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-indigospace.png') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
 
     <!-- Logo 5 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4 col-sm-3 col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-asjk.png') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
 
     <!-- Logo 6 -->
-    <div class="col-md-4 col-lg-2 col-6 mb-4 d-flex justify-content-center">
+    <div class="col-4 col-sm-3 col-md-2 mb-3 d-flex justify-content-center">
       <img src="{{ url('/images/logo-drt.png') }}" class="client-icon" alt="" style="width: 100px; height: auto;">
     </div>
   </div>

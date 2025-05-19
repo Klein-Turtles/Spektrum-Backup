@@ -76,7 +76,7 @@
         <div class="container">
             <h2 class="category-title text-center mb-5">Produk Populer</h2>
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="productContainer">
+            <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 g-4" id="productContainer">
                 <!-- Product Cards - Each card in its own column -->
                 @foreach ($products as $product)
                 <div class="col service-item" data-category="{{ $product->kategori }}" data-name="{{ strtolower($product->nama) }}">
