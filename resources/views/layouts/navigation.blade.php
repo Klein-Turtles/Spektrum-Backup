@@ -2,7 +2,7 @@
     <div class="container px-3">
       <!-- Logo -->
       <a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto ">
-        <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="Logo">
+        <img src="{{ asset('images/logo-navbar.png') }}" class="img-fluid" alt="Logo">
       </a>
 
       <!-- Mobile Toggle Button -->

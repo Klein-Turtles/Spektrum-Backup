@@ -1,8 +1,10 @@
 @extends('layouts.admin')
 
+@section('title', 'Input Services')
+
 @section('content')
 <div class="container mt-5">
-    <h1 class="h3 mb-4">Tambah Layanan Baru</h1>
+    <h1 class="h3 mb-4">Insert Service</h1>
 
     <form action="{{ route('service_store') }}" method="POST" enctype="multipart/form-data">
         @csrf

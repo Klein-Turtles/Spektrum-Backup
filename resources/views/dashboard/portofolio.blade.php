@@ -49,9 +49,16 @@
         </style>
     @endpush
 
-@section('content')
-    <a  href='{{ route('input_porto') }}'class="btn btn-primary">Tambah data</a>
 
+@section('title', 'Portofolio')
+@section('content')
+
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold">Daftar Portofolio</h1>
+        <a href="{{ route('input_porto') }}" class="btn btn-primary  me-1 " >
+            Tambah Layanan
+        </a>
+    </div>
             @if(session('success'))
         <div class="bg-green-200 text-green-800 p-3 rounded mb-4  alert alert-success" role="alert"">
             {{ session('success') }}

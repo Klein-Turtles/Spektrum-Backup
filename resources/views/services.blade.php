@@ -6,6 +6,8 @@
 
 @section('content')
 
+@section('title', 'Services')
+
 
     <!-- Carousel Container -->
     <div class="carousel-container overflow-hidden position-relative">

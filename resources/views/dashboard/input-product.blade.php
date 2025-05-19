@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Input Products')
+
 @section('content')
 <div class="container">
     <h2>Tambah Produk</h2>

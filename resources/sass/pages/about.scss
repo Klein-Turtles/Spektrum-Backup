@@ -91,6 +91,26 @@
     transform: scale(1.3);
 }
 
+@media (max-width: 576px) {
+  .client-icon {
+    width: 60px !important; /* perkecil logo di HP */
+  }
+
+  .col-6 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  /* Optional: jika ingin 4 per baris (lebih kecil lagi) */
+  /* 
+  .col-6 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  } 
+  */
+}
+
+
 .laptop-mockup {
     background-color: #252525;
     border-radius: 15px;
@@ -526,8 +546,6 @@
   line-height: 1.2;
   text-align:center;
   background: var(--gradient-blue);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   margin-bottom: 2rem;
   margin-top: 1rem;
 }

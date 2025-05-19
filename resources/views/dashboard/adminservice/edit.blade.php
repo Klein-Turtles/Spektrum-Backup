@@ -1,8 +1,10 @@
 @extends('layouts.admin')
 
+@section('title', 'Edit Services')
+
 @section('content')
 <div class="container mt-5">
-    <h1 class="h3 mb-4">Tambah Layanan Baru</h1>
+    <h1 class="h3 mb-4">Edit Service</h1>
 
     <form action="{{ route('update_service', $layanan->id) }}" method="POST" enctype="multipart/form-data">
     @csrf

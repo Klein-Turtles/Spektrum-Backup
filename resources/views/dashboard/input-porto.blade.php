@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Input Portofolio')
+
 @section('content')
     <div class="container mt-5">
     <h2>Tambah Portofolio</h2>

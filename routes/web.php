@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\adminPortoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -7,6 +8,7 @@ use App\Http\Controllers\ServicePageController;
 use App\Http\Controllers\inputPortofolioController;
 use App\Http\Controllers\PortoPageController;
 use App\Http\Controllers\productPageController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -38,13 +40,14 @@ Route::get('/products/detail-product/{slug}', [productPageController::class, 'de
 Route::get('/portofolio', [PortoPageController::class, 'portofolio'])->name('portofolio');
 Route::get('/portofolio/detail-porto/{slug}', [PortoPageController::class, 'detailPorto'])->name('detail-porto');
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 
 //Routing Dashboard For product
-Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     
     // Halaman utama daftar produk
     Route::get('/product', [productPageController::class, 'index'])->name('admin_product');
@@ -114,6 +117,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
 
 require __DIR__.'/auth.php';
