@@ -42,7 +42,11 @@ class ServicePageController extends Controller
     public function detailService($slug)
     {
         $layanan = Service::where('slug', $slug)->firstOrFail();
-        return view('detail-service', compact('layanan'));
+
+        $pesan = "Halo, saya ingin memesan layanan $layanan->nama, apakah tersedia?";
+        $link = "https://wa.me/6285730220374?text=" . urlencode($pesan);
+
+        return view('detail-service', compact('layanan','link'));
     }
 
     public function create()

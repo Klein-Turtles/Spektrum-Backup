@@ -19,7 +19,7 @@
                         <h2>Portofolio Spektrum Teknologi</h2>
                         <p class="mb-0">Lihat berbagai proyek inovatif yang telah kami kembangkan. Dari sistem hidroponik otomatis hingga solusi IoT, kami bangga telah membantu klien mewujudkan visi teknologi mereka dengan hasil yang terukur dan berkelanjutan.</p>
                         <p class="price-highlight">Lebih dari 50+ proyek sukses telah diselesaikan sejak 2019</p>
-                        <a class="btn btn-primary" href="https://wa.me/085730220374" type="button">Konsultasi Gratis</a>
+                        <a class="btn btn-primary" href="https://wa.me/6285730220374" type="button">Konsultasi Gratis</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             </div>
         @endforeach
     </div>
-</div>
+</div> 
 
 
 <div class="d-flex justify-content-center mt-4">

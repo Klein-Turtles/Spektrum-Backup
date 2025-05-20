@@ -15,19 +15,19 @@
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav gap-3">
           <li class="nav-item">
-            <a class="nav-link " href="{{ route('home') }}" >Home</a>
+            <a class="nav-link {{ request()->is('/') ? 'active' : '' }} " href="{{ route('home') }}" >Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('product') }}">Products</a>
+            <a class="nav-link {{ request()->is('products*') ? 'active' : '' }}" href="{{ route('product') }}">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('services') }}">Services</a>
+            <a class="nav-link {{ request()->is('services*') ? 'active' : '' }}" href="{{ route('services') }}">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('portofolio') }}">Portofolio</a>
+            <a class="nav-link {{ request()->is('portofolio*') ? 'active' : '' }}" href="{{ route('portofolio') }}">Portofolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('about') }}">About Us </a>
+            <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="{{ route('about') }}">About Us </a>
           </li>
         </ul>
         <!-- Contact Button -->

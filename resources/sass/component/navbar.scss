@@ -1,250 +1,46 @@
-* {
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-  background-color: #f8f9fa;
-}
-
-.logo img {
-  max-width: 120px;
-  height: auto;
-}
-
-/* Top bar styles */
-.top-bar {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #eaeaea;
-}
-
-.top-bar a {
-  color: #333;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-/* Logo styles */
-.navbar-brand {
-  font-size: 24px;
-  font-weight: bold;
-  color: #003156 !important;
-}
-
-/* Center the navbar items */
-.navbar-nav {
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Navigation links */
 .navbar-nav .nav-link {
+  position: relative;
   color: #333;
   font-weight: 500;
-  position: relative;
   padding: 10px 15px;
   transition: color 0.3s;
 }
 
-.navbar-nav .nav-link.active::before {
-  width: 100%;
-}
-
-.navbar-nav .nav-link.active::before {
-  width: 100%;
-}
-
-
-
-.navbar-nav .nav-link:hover {
-  color: #003156;
-}
-
-/* Underline effect for nav links */
-.navbar-nav .nav-link::before,
-.navbar-nav .nav-link::after {
+.navbar-nav .nav-link::before {
   content: '';
   position: absolute;
+  bottom: 0;
+  left: 0;
   width: 0;
   height: 2px;
-  background: #003156;
-  transition: width 0.3s;
-  left: 0;
+  background-color: #003156;
+  transition: width 0.3s ease;
 }
 
-.navbar-nav .nav-link::before {
-  bottom: 0;
-}
-
-.navbar-nav .nav-link::after {
-  display: none;
-}
-
-.navbar-nav .nav-link:hover::before,
-.navbar-nav .nav-link:hover::after {
+.navbar-nav .nav-link:hover::before {
   width: 100%;
 }
 
-/* Dropdown styling */
-.dropdown-menu {
-  border-radius: 5px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
-  min-width: 200px;
-  padding: 10px 0;
-  display: block;
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(15px);
-  transition: all 0.3s;
-  margin-top: 0;
-  text-align: left;
-  /* Center dropdown text */
-}
-
-/* Hover dropdown effect */
-.dropdown:hover>.dropdown-menu {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.dropdown-item {
-  padding: 10px 20px;
-  transition: all 0.3s;
-  position: relative;
-}
-
-/* Green hover effect for dropdown items */
-.dropdown-item:hover {
-  background-color: #003156;
-  color: white;
-}
-
-/* Underline effect for dropdown items */
-.dropdown-item::after {
-  /* content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: #003156;
-  bottom: 5px;
-  left: 50%; */
-  /* transform: translateX(-50%); */
-  transition: width 0.3s;
-}
-
-.dropdown-item.active {
-  position: relative;
-  background-color: #003156;
-  color: white;
-}
-
-.dropdown-toggle::after {
-  font-size: 10px;
-  position: relative;
-  top: -2px;
-}
-
-/* Contact button */
-.contact-btn {
-  background-color: #003156;
-  color: white !important;
-  padding: 12px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-
-.contact-btn:hover {
-  background-color: #006ac7;
-}
-
-/* Badge styling */
-.badge-new {
-  background-color: #003156;
-  color: white;
-  padding: 2px 5px;
-  border-radius: 3px;
-  font-size: 10px;
-  margin-left: 5px;
-}
-
-.dropdown-item:hover .badge-new {
-  background-color: white;
+.navbar-nav .nav-link.active {
   color: #003156;
 }
 
-.dropdown-item.active .badge-new {
-  background-color: white;
-  color: #003156;
+.navbar-nav .nav-link.active::before {
+  width: 100%;
 }
 
-/* Handle mobile devices - use click for mobile */
-/* DESKTOP - Hover */
-@media (min-width: 992px) {
-  .dropdown-menu {
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: all 0.3s ease;
-  }
 
-  .dropdown:hover .dropdown-menu {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* MOBILE - Click (class .show ditambahkan oleh JS) */
-@media (max-width: 991.98px) {
-  .dropdown-menu {
-    display: none;
-    background-color: white;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 0;
-    padding: 10px 0;
-    transition: all 0.3s ease;
-    opacity: 0;
-  }
-
-  .dropdown-menu.show {
-    display: block;
-    opacity: 1;
-  }
-
-  .dropdown-toggle::after {
-    display: none;
-    /* Hilangkan panah default kalau mau ganti pakai ikon lain */
-  }
-
-  .dropdown-item {
-    padding: 12px 20px;
-    text-align: left;
-    color: #333;
-  }
-
-  .dropdown-item:hover {
-    background-color: #f8f8f8;
-    color: #003156;
-  }
-}
 
 /* Untuk layar kecil (mobile) */
 @media (max-width: 768px) {
-    .navbar-nav .nav-link {
-        position: relative;
-    }
-
-    .navbar-nav .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 100%;
-        background-color: #003156; /* atau warna yang kamu mau */
-    }
+  .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #003156;
+  }
 }
+

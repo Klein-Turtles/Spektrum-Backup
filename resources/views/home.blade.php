@@ -19,7 +19,7 @@
           <h2>CV. Spektrum Teknologi</h2>
           <p>Teknologi pintar bertemu energi bersih, membangun masa depan di mana inovasi menghadirkan kenyamanan,
             keberlanjutan, dan kehidupan yang lebih baik untuk semua.</p>
-          <a class="btn btn-primary" href="https://wa.me/085730220374" type="button">Hubungi Kami</a>
+          <a class="btn btn-primary" href="https://wa.me/6285730220374" type="button">Hubungi Kami</a>
         </div>
       </div>
       <div class="carousel-item">
@@ -28,7 +28,7 @@
           <h2>Solusi Otomasi & Kendali Cerdas</h2>
           <p>Kami menghadirkan teknologi otomatisasi yang memudahkan operasional, meningkatkan efisiensi, dan
             mendukung produktivitas industri Anda.</p>
-          <button class="btn btn-primary" href="https://wa.me/085730220374" type="button">Hubungi Kami</button>
+          <button class="btn btn-primary" href="https://wa.me/6285730220374" type="button">Hubungi Kami</button>
         </div>
       </div>
       <div class="carousel-item">
@@ -37,7 +37,7 @@
           <h2>Inovasi IoT untuk Masa Depan</h2>
           <p>Dari rumah pintar hingga sistem industri, kami mengembangkan solusi IoT yang terintegrasi, aman, dan siap
             menghadapi tantangan era digital.</p>
-          <button class="btn btn-primary" href="https://wa.me/085730220374" type="button">Hubungi Kami</button>
+          <button class="btn btn-primary" href="https://wa.me/6285730220374" type="button">Hubungi Kami</button>
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@
         <div class="poster-info">
           <h4>Promo Terbatas!</h4>
           <p>Transformasi bisnismu mulai sekarang</p>
-          <button href="https://wa.me/085730220374" class="promo-button">Pesan Sekarang</button>
+          <button href="https://wa.me/6285730220374" class="promo-button">Pesan Sekarang</button>
         </div>
       </div>
       
@@ -65,7 +65,7 @@
         <div class="poster-info">
           <h4>Diskon 30%</h4>
           <p>Untuk pemasangan awal</p>
-          <button href="https://wa.me/085730220374" class="promo-button">Pesan Sekarang</button>
+          <button href="https://wa.me/6285730220374" class="promo-button">Pesan Sekarang</button>
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@
             <p class="mb-4">Kembangkan bisnis dengan layanan digital terbaik dari Spektrum Teknologi. Mulai dari
               pengembangan sistem IoT, Robotic, Tech Farm hingga integrasi AI – semua ada dalam satu solusi
               terpercaya!</p>
-            <a href="https://wa.me/085730220374" class="btn btn-offering">Konsultasi Gratis</a>
+            <a href="https://wa.me/6285730220374" class="btn btn-offering">Konsultasi Gratis</a>
           </div>
         </div>
         <div class="col-lg-5 position-relative">
