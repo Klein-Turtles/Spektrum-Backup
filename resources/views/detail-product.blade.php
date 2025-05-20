@@ -35,9 +35,13 @@
         </div>
       </div>      
     </div>
-        <div>
-            <button class="btn btn-primary">Pesan Disini</button>
-        </div>
+          <div>
+              @php
+                  $pesan = "Halo, saya ingin memesan produk $product->nama, apakah tersedia?";
+                  $link = "https://wa.me/6285730220374?text=" . urlencode($pesan);   
+              @endphp
+                <a href="{{ $link }}" type="button" class="btn btn-primary">Pesan Disini</a>
+          </div>
   </div>
 </div>
 

@@ -15,7 +15,7 @@
             data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ url('/images/service-page.png')}}" class="d-block w-100" alt="...">
+                    <img src="{{ url('/images/aboutUs-page.png')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption custom-caption">
                         <h2>About Us</h2>
                         <p class="mb-0">Perusahaan ini bergerak di bidang IoT, Robotika, Renewable Energy, dan Edukasi teknologi, serta menyediakan pelatihan untuk siswa, mahasiswa, dan karyawan di bidang IoT, Robotik, dan PLC. Spektrum Teknologi terus berinovasi memberikan solusi berbasis teknologi untuk industri dan pendidikan.</p>
@@ -172,8 +172,8 @@
         </div>
   <div class="d-flex flex-wrap justify-content-center">
     <!-- Circle merchants -->
-    <div class="circle">
-      <img src="{{ url('/images/about/merchant/shopee.png') }}" alt="Shopee">
+    {{-- <div class="circle">
+      <img  src="{{ url('/images/about/merchant/shopee.png') }}" alt="Shopee">
     </div>
     <div class="circle">
       <img src="{{  url('/images/about/merchant/tokped.png')}}" alt="Tokopedia">
@@ -183,8 +183,29 @@
     </div>
     <div class="circle">
         <img src="{{  url('/images/about/merchant/lazada.jpg')}}" alt="Lazada">
+    </div> --}}
+    <!-- Circle merchants -->
+        <div class="circle">
+        <a href="https://shopee.co.id/spektrum_store">
+        <img src="{{ url('/images/about/merchant/shopee.png') }}" alt="Shopee">
+        </a>
+        </div>
+        <div class="circle">
+            <a  href="https://www.tokopedia.com/spektrum-store">
+        <img src="{{  url('/images/about/merchant/tokped.png')}}" alt="Tokopedia">
+        </a>
+        </div>
+        <div class="circle">
+            <a href="https://mart.grab.com/my/en/merchant/1-C2ECTK6ZC4NZCA">
+        <img src="{{  url('/images/about/merchant/grabmart.png')}}" alt="GrabMart">
+        </a>
+        </div>
+        <div class="circle">
+            <a href="https://www.lazada.co.id/shop/cncstore-bandung?path=profile.htm&pageTypeId=3">
+        <img src="{{  url('/images/about/merchant/lazada.jpg')}}" alt="Lazada">
+        </a>
+        </div>
     </div>
-  </div>
 </div>
 </section>
 

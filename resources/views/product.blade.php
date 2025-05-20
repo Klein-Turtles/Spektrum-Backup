@@ -18,7 +18,7 @@
                         <h2>Automatic Solar Panel</h2>
                         <p class="mb-0">Solusi Modern & Efisien untuk Berbagai Kebutuhan Industri</p>
                         <p class="price-highlight">Mulai dari Rp699.000 – Instalasi Cepat & Support Penuh</p>
-                        <a class="btn btn-primary" href="contact.hmtl" type="button">Pesan Sekarang</a>
+                        <a class="btn btn-primary" href="https://wa.me/085730220374" type="button">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>

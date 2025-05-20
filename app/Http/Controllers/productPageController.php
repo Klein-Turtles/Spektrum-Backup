@@ -108,6 +108,7 @@ class productPageController extends Controller
         $products->delete();
         return back()->with('success', 'product berhasil dihapus.');
     }
+    
 
 
 }
