@@ -37,7 +37,9 @@ class productPageController extends Controller
     public function detailProduct($slug)
     {
         $product = Product::where('slug', $slug)->firstOrFail();
-        return view('detail-product', compact('product'));
+            $pesan = "Halo, saya ingin memesan produk $product->nama, apakah tersedia?";
+            $link = "https://wa.me/6285730220374?text=" . urlencode($pesan);   
+        return view('detail-product', compact('product','link'));
     }
 
     public function create()
@@ -108,6 +110,7 @@ class productPageController extends Controller
         $products->delete();
         return back()->with('success', 'product berhasil dihapus.');
     }
+    
 
 
 }

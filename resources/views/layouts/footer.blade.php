@@ -11,19 +11,19 @@
         <a href="{{ route('services') }}">Services</a>
         <a href="{{ route('product') }}">Products</a>
         <a href="{{ route('about') }}">About Us</a>
-        <a href="https://wa.me/085730220374">Contact</a>
+        <a href="https://wa.me/6285730220374">Contact</a>
       </div>
     </div>
     
     <div class="footer-section">
       <h3>Social Media</h3>
       <div class="footer-links">
-        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
-        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-        <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
-        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.facebook.com/share/19zWDdt5Zq/"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://www.instagram.com/myspektrum.teknologi/"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.tiktok.com/@mukaa.romah?_t=ZS-8wLPmu32yES&_r=1"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://x.com/sevirarizky?t=zxlVLF1BDMqTiKFSE80-Fw&s=09"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://www.youtube.com/@spektrumteknologi3276"><i class="fab fa-tiktok"></i> TikTok</a>
+        <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
     </div>
     

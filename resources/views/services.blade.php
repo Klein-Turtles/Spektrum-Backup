@@ -22,7 +22,7 @@
                             Kontrol otomatis untuk penyiraman, pencahayaan, dan nutrisi — cocok untuk industri pertanian
                             modern.</p>
                         <p class="price-highlight">Mulai dari Rp399.000 – Dukung Pertanian Cerdas Modern</p>
-                        <a class="btn btn-primary" href="contact.hmtl" type="button">Booking Sekarang</a>
+                        <a class="btn btn-primary" href="https://wa.me/6285730220374" type="button">Booking Sekarang</a>
                     </div>
                 </div>
             </div>

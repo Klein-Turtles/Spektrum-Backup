@@ -12,7 +12,7 @@ use App\Http\Controllers\productPageController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/test', function () {
     return view('test');
@@ -22,9 +22,6 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
 
 Route::get('/about', function () {
     return view('about');})->name('about');

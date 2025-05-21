@@ -35,9 +35,9 @@
         </div>
       </div>      
     </div>
-        <div>
-            <button class="btn btn-primary">Pesan Disini</button>
-        </div>
+          <div>
+                <a href="{{ $link }}" type="button" class="btn btn-primary">Pesan Disini</a>
+          </div>
   </div>
 </div>
 

@@ -55,7 +55,7 @@
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold">Daftar Product</h1>
         <a href="{{ route('product_input') }}" class="btn btn-primary me-1 " >
-            Tambah Layanan
+            Tambah Product
         </a>
     </div>
 
@@ -84,9 +84,9 @@
                     <tr>
                         <td>{{ $product->nama }}</td>
                         <td class="text-end actions d-flex justify-content-end">
-                            <a href="{{ route('edit_service', $product->id) }}" class="btn btn-sm btn-edit me-1">Edit</a>
+                            <a href="{{ route('edit_product', $product->id) }}" class="btn btn-sm btn-edit me-1">Edit</a>
                             <form action="{{ route('destroy_product', $product->id) }}" method="POST"
-                                 onsubmit="return confirm('Yakin ingin menghapus layanan ini?');">
+                                 onsubmit="return confirm('Yakin ingin menghapus produk ini?');">
                     @csrf
                      @method('DELETE')
                     <button type="submit" class="btn btn-danger">Hapus</button>

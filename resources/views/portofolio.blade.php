@@ -14,12 +14,12 @@
             data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ url('/images/service-page.png')}}" class="d-block w-100" alt="...">
+                    <img src="{{ url('/images/portofolio-page.png')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption custom-caption">
                         <h2>Portofolio Spektrum Teknologi</h2>
                         <p class="mb-0">Lihat berbagai proyek inovatif yang telah kami kembangkan. Dari sistem hidroponik otomatis hingga solusi IoT, kami bangga telah membantu klien mewujudkan visi teknologi mereka dengan hasil yang terukur dan berkelanjutan.</p>
                         <p class="price-highlight">Lebih dari 50+ proyek sukses telah diselesaikan sejak 2019</p>
-                        <a class="btn btn-primary" href="contact.hmtl" type="button">Konsultasi Gratis</a>
+                        <a class="btn btn-primary" href="https://wa.me/6285730220374" type="button">Konsultasi Gratis</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             </div>
         @endforeach
     </div>
-</div>
+</div> 
 
 
 <div class="d-flex justify-content-center mt-4">
