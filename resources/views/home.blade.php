@@ -51,11 +51,11 @@
   
     <div class="poster-row">
       <div class="poster-card">
-        <img src="{{ url('/images/promo-poster1-home.png') }}" alt="Promo Poster" class="promo-poster">
+        <img src="{{ url('/images/promo-poster2-home.png') }}" alt="Promo Poster" class="promo-poster">
         <div class="poster-info">
           <h4>Promo Terbatas!</h4>
           <p>Transformasi bisnismu mulai sekarang</p>
-          <button href="https://wa.me/6285730220374" class="promo-button">Pesan Sekarang</button>
+          <a type="button" href="https://wa.me/6285730220374" class="promo-button">Pesan Sekarang</a>
         </div>
       </div>
       
@@ -65,7 +65,7 @@
         <div class="poster-info">
           <h4>Diskon 30%</h4>
           <p>Untuk pemasangan awal</p>
-          <button href="https://wa.me/6285730220374" class="promo-button">Pesan Sekarang</button>
+          <a type="button" href="https://wa.me/6285730220374" class="promo-button">Pesan Sekarang</a>
         </div>
       </div>
     </div>

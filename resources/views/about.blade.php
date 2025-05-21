@@ -232,10 +232,10 @@
                 <!-- Leader Card 1 -->
                 <div class="team-card" id="leader1">
                     <div class="team-card-image">
-                        <img src="/images/about/team/image.png" alt="Dr. Alexander Chen">
+                        <img src="/images/about/team/andoko.jpeg" alt="Andoko">
                     </div>
                     <div class="team-card-info">
-                        <h3>Dr. Alexander Chen</h3>
+                        <h3>Andoko</h3>
                         <p>Chief Executive Officer</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin-in"></i></a>
@@ -248,10 +248,10 @@
                 <!-- Leader Card 2 -->
                 <div class="team-card" id="leader2">
                     <div class="team-card-image">
-                        <img src="/images/about/team/image.png" alt="Jessica Reynolds">
+                        <img src="/images/about/team/siti-sendari.jpeg" alt="Siti Sendari">
                     </div>
                     <div class="team-card-info">
-                        <h3>Jessica Reynolds</h3>
+                        <h3>Siti Sendari</h3>
                         <p>Chief Financial Officer</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin-in"></i></a>
@@ -264,10 +264,10 @@
                 <!-- Leader Card 3 -->
                 <div class="team-card" id="leader3">
                     <div class="team-card-image">
-                        <img src="/images/about/team/image.png" alt="Dr. Maya Patel">
+                        <img src="/images/about/team/danang-arengga-wibowo.jpeg" alt="Danang Arengga Wibowo">
                     </div>
                     <div class="team-card-info">
-                        <h3>Dr. Maya Patel</h3>
+                        <h3>Danang Arengga Wibowo</h3>
                         <p>Chief Technology Officer</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin-in"></i></a>
@@ -280,10 +280,10 @@
                 <!-- Leader Card 4 -->
                 <div class="team-card" id="leader4">
                     <div class="team-card-image">
-                        <img src="/images/about/team/image.png" alt="Robert Johnson">
+                        <img src="/images/about/team/dyah-lestari.jpeg" alt="Dyah Lestari">
                     </div>
                     <div class="team-card-info">
-                        <h3>Robert Johnson</h3>
+                        <h3>Dyah Lestari</h3>
                         <p>Chief Marketing Officer</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin-in"></i></a>
@@ -296,10 +296,10 @@
                 <!-- Leader Card 5 -->
                 <div class="team-card" id="leader5">
                     <div class="team-card-image">
-                        <img src="/images/about/team/image.png" alt="Sarah Wilson">
+                        <img src="/images/about/team/oditya-andalas.jpeg" alt="Oditya Andalas">
                     </div>
                     <div class="team-card-info">
-                        <h3>Sarah Wilson</h3>
+                        <h3>SOditya Andalas</h3>
                         <p>Chief Operating Officer</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin-in"></i></a>
@@ -317,10 +317,10 @@
                 <!-- Team Card 1 -->
                 <div class="team-card" id="team-member1">
                     <div class="team-card-image">
-                        <img src="/images/about/team/image2.png" alt="Daniel Park">
+                        <img src="/images/about/team/andriana-kusuma-dewi.jpeg" alt="Andriana Kusuma Dewi">
                     </div>
                     <div class="team-card-info">
-                        <h3>Daniel Park</h3>
+                        <h3>Andriana Kusuma Dewi</h3>
                         <p>Senior Developer</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin-in"></i></a>
@@ -333,10 +333,10 @@
                 <!-- Team Card 2 -->
                 <div class="team-card" id="team-member2">
                     <div class="team-card-image">
-                        <img src="/images/about/team/image2.png" alt="Elena Rodriguez">
+                        <img src="/images/about/team/mukaromah.jpeg" alt="Mukaromah">
                     </div>
                     <div class="team-card-info">
-                        <h3>Elena Rodriguez</h3>
+                        <h3>Mukaromah</h3>
                         <p>UX Researcher</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin-in"></i></a>
@@ -349,10 +349,10 @@
                 <!-- Team Card 3 -->
                 <div class="team-card" id="team-member3">
                     <div class="team-card-image">
-                        <img src="/images/about/team/image2.png" alt="Michael Zhang">
+                        <img src="/images/about/team/tegar-jatu-ramadhani.jpeg" alt="Tegar Jatu Ramadhani">
                     </div>
                     <div class="team-card-info">
-                        <h3>Michael Zhang</h3>
+                        <h3>Tegar Jatu Ramadhani</h3>
                         <p>Product Manager</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin-in"></i></a>
@@ -365,10 +365,10 @@
                 <!-- Team Card 4 -->
                 <div class="team-card" id="team-member4">
                     <div class="team-card-image">
-                        <img src="/images/about/team/image2.png" alt="Aisha Johnson">
+                        <img src="/images/about/team/sevira.jpg" alt="Sevira Rizky Maharani">
                     </div>
                     <div class="team-card-info">
-                        <h3>Aisha Johnson</h3>
+                        <h3>Sevira Rizky Maharani</h3>
                         <p>Marketing Specialist</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin-in"></i></a>
@@ -381,10 +381,10 @@
                 <!-- Team Card 5 -->
                 <div class="team-card" id="team-member5">
                     <div class="team-card-image">
-                        <img src="/images/about/team/image2.png" alt="Thomas Garcia">
+                        <img src="/images/about/team/wildan.jpeg" alt="Wildan Iswahyudi">
                     </div>
                     <div class="team-card-info">
-                        <h3>Thomas Garcia</h3>
+                        <h3>Wildan Iswahyudi</h3>
                         <p>Financial Analyst</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/danang-arengga-3239a6201/"><i class="fab fa-linkedin-in"></i></a>

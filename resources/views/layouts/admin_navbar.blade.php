@@ -24,21 +24,21 @@
             <li class="nav-item">
                 <a href="{{ route('admin_product') }}"
                 class="nav-link">
-                <i class="bi bi-people"></i>
+                <i class="bi-box-seam"></i>
                 <span class="sidebar-item-text">Products</span>
             </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin_porto') }}"
                     class="nav-link">
-                    <i class="bi bi-box"></i>
+                    <i class="bi bi-briefcase"></i>
                     <span class="sidebar-item-text">Portofolio</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin_service') }}"
                     class="nav-link">
-                    <i class="bi bi-box"></i>
+                    <i class="bi bi-tools"></i>
                     <span class="sidebar-item-text">Service</span>
                 </a>
             </li>
