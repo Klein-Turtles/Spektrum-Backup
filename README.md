@@ -17,7 +17,6 @@
 | Vite            | 5.x       |
 | Sass            | 1.69.x    |
 | Bootstrap       | 5.3.x     |
-| Vue (optional)  | 3.x       |
 
 ---
 
